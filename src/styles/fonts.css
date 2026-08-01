@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap');
+
+/* Display font — headings, logo */
+.font-serif,
+[class*='font-serif'] {
+  font-family: 'Instrument Serif', Georgia, serif;
+}
+
+/* Body font — navigation, descriptions */
+.font-sans,
+body,
+[class*='font-sans'] {
+  font-family: 'Inter', system-ui, sans-serif;
+}
