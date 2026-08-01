@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { SparklesIcon, ShieldCheckIcon, CompassIcon, ArrowRightIcon, XIcon, MapPinIcon, CalendarIcon } from '../components/Icons'
+import { SparklesIcon, ShieldCheckIcon, ArrowRightIcon, XIcon, MapPinIcon, CalendarIcon } from '../components/Icons'
 
 interface Project {
   id: string
