@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { MapPinIcon, StarIcon, ArrowRightIcon, ShieldCheckIcon, HeartIcon } from './Icons'
+import { MapPinIcon, StarIcon, ArrowRightIcon, HeartIcon } from './Icons'
 
 export interface Destination {
   id: string

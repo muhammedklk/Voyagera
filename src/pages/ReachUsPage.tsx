@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { SparklesIcon, ShieldCheckIcon, GlobeIcon, MailIcon, PhoneIcon, MapPinIcon, ChevronDownIcon } from '../components/Icons'
+import { SparklesIcon, ShieldCheckIcon } from '../components/Icons'
 
 // Helper Accordion Icon
 const ChevronDown: React.FC<{ isOpen: boolean }> = ({ isOpen }) => (

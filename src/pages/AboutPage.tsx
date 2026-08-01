@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { SparklesIcon, ShieldCheckIcon, GlobeIcon, QuoteIcon } from '../components/Icons'
+import { SparklesIcon, QuoteIcon } from '../components/Icons'
 
 interface CounterProps {
   target: number
