@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { SparklesIcon, CalendarIcon, ArrowRightIcon, XIcon } from '../components/Icons'
+import { SparklesIcon, CalendarIcon, ArrowRightIcon } from '../components/Icons'
 
 interface Article {
   id: string
@@ -29,6 +29,7 @@ const ARTICLES: Article[] = [
       'In the mountains outside Kyoto, time is measured not by seconds, but by the slow dripping of geothermal water over moss-covered granite stones.',
       'For over eight centuries, Japanese monks and poets have retreated to natural hot springs to shed the noise of court life and city hustle. At our private Arashiyama villa, the spring water emerges from 800 meters underground, rich in natural minerals that calm the nervous system.',
       'When you submerge yourself in total quietude at dawn, surrounded only by ancient Japanese cedar and bamboo, your mind naturally aligns with the rhythm of the forest.',
+      'Every season brings a distinct olfactory landscape: spring cherry blossoms floating over natural wooden tubs, summer pine resin carried by mountain breezes, crisp maple amber in autumn, and deep silent snow blankets in winter.',
     ],
   },
   {
@@ -45,6 +46,7 @@ const ARTICLES: Article[] = [
       'High above St. Moritz, when the last alpine skiers return to the valleys below, a profound stillness envelops the Engadin valley.',
       'At 2,000 meters altitude, atmospheric distortion drops to near zero. Armed with heated cashmere blankets and hot spiced cider, guests step onto the private telescope deck to gaze directly into the spiral arms of Andromeda.',
       'There is something deeply grounding about realizing how small our everyday worries are against the backdrop of eternal cosmic silence.',
+      'Our high-altitude refuge was built specifically to protect dark sky corridors. Modern architectural lighting is strictly recessed and shielded, allowing the night sky to shine with unhindered brilliance.',
     ],
   },
   {
@@ -58,23 +60,24 @@ const ARTICLES: Article[] = [
     author: 'Dr. Alistair Sterling',
     excerpt: 'How triple-glazed acoustic glass turned harsh sub-arctic blizzards into cozy celestial theaters.',
     fullText: [
-      'The Northern Lights do not make a sound, yet their movement feels almost musical. Emerald ribbon waves flare across the dark void of the Iceland sky.',
-      'Designing glass domes in an environment where winds can reach 80 km/h required engineering precision. Each pane is triple-laminated with sound-absorbing argon gas, ensuring complete warmth while keeping 360-degree clear sightlines to the night sky.',
+      'Reykjanes is a realm forged by sub-arctic wind and subterranean magma. To live here is to exist between ice and fire.',
+      'When designing our glass domes, the challenge was engineering a ceiling that could withstand 100 km/h blizzard gusts while remaining heated and crystal clear for viewing solar flares.',
+      'Lying back in bed at 2:00 AM while emerald and violet auroral curtains dance directly above your head is an experience that stays with you for a lifetime.',
     ],
   },
   {
     id: 'art-4',
-    title: 'Foraging with Amalfi Michelin Masters',
-    subtitle: 'Wild Herbs & Cliffside Vineyards of Ravello',
+    title: 'Cliffside Mediterranean Gastronomy',
+    subtitle: 'Harvesting Bio-Dynamic Amalfi Terraces',
     category: 'Gastronomy',
     date: 'April 12, 2026',
     readTime: '7 min read',
     image: 'https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1200&auto=format&fit=crop',
     author: 'Camille Laurent',
-    excerpt: 'Harvesting wild rosemary, lemons, and coastal fennel on steep terraced gardens overlooking Positano.',
+    excerpt: 'From wild mountain oregano to sun-ripened Sfusato lemons overlooking the Tyrrhenian Sea.',
     fullText: [
-      'On the sheer terraces of Ravello, agriculture has remained virtually unchanged for five centuries. Hand-built stone walls hold rich volcanic soil that produces lemons the size of melons.',
-      'We joined local chef Giovanni to forage wild herbs along ancient mule tracks, pairing our harvest with rare coastal wines aged in underwater sea cellars.',
+      'The terraced lemon groves of Ravello descend 300 meters straight into turquoise waters. Here, soil is nurtured by sea salt air and volcanic minerals.',
+      'Every morning, our kitchen team hand-harvests sun-drenched lemons, wild caper leaves, and heirloom tomatoes to prepare intimate farm-to-table meals paired with rare biodynamic Campania vintages.',
     ],
   },
 ]
@@ -90,6 +93,91 @@ const JournalPage: React.FC = () => {
       ? ARTICLES
       : ARTICLES.filter((a) => a.category === activeCategory)
 
+  // In-Page Full Article Reader View (NO MODAL POPUP)
+  if (readingArticle) {
+    return (
+      <div className="pt-28 pb-20 bg-white text-neutral-900 animate-fade-rise">
+        <article className="max-w-4xl mx-auto px-6">
+          {/* Back Navigation */}
+          <button
+            onClick={() => {
+              setReadingArticle(null)
+              window.scrollTo({ top: 0, behavior: 'smooth' })
+            }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-neutral-100 text-neutral-800 text-xs font-semibold hover:bg-neutral-200 transition-colors mb-8"
+          >
+            ← Back to Journal Dispatches
+          </button>
+
+          {/* Article Header */}
+          <div className="space-y-4 mb-8">
+            <div className="flex items-center gap-3 text-xs text-amber-600 font-semibold uppercase tracking-widest">
+              <span>{readingArticle.category}</span>
+              <span>•</span>
+              <span className="text-neutral-400 font-normal">{readingArticle.date}</span>
+              <span>•</span>
+              <span className="text-neutral-400 font-normal">{readingArticle.readTime}</span>
+            </div>
+
+            <h1
+              className="text-4xl sm:text-6xl font-serif text-neutral-900 leading-[1.08]"
+              style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
+            >
+              {readingArticle.title}
+            </h1>
+
+            <p className="text-lg text-neutral-500 font-serif italic">
+              {readingArticle.subtitle}
+            </p>
+
+            <div className="pt-2 flex items-center gap-3 text-xs text-neutral-600 border-t border-b border-neutral-100 py-3">
+              <span className="font-semibold text-neutral-900">By {readingArticle.author}</span>
+              <span>•</span>
+              <span>Voyagera Editorial Journal</span>
+            </div>
+          </div>
+
+          {/* Featured Image */}
+          <div className="rounded-3xl overflow-hidden mb-12 shadow-lg h-96 sm:h-[480px]">
+            <img
+              src={readingArticle.image}
+              alt={readingArticle.title}
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* Article Full Text Body */}
+          <div className="space-y-6 text-base sm:text-lg text-neutral-700 leading-relaxed font-sans max-w-3xl mx-auto">
+            {readingArticle.fullText.map((paragraph, idx) => (
+              <p key={idx} className="first-letter:text-5xl first-letter:font-serif first-letter:float-left first-letter:mr-3 first-letter:text-neutral-900">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+
+          {/* Author Footnote & Return Button */}
+          <div className="mt-16 pt-8 border-t border-neutral-200 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+            <div>
+              <span className="text-xs text-neutral-400 uppercase tracking-widest block">Published By</span>
+              <span className="text-sm font-semibold text-neutral-900">{readingArticle.author}</span>
+            </div>
+
+            <button
+              onClick={() => {
+                setReadingArticle(null)
+                window.scrollTo({ top: 0, behavior: 'smooth' })
+              }}
+              className="px-6 py-3 bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-semibold rounded-full transition-all"
+            >
+              ← Return to All Essays
+            </button>
+          </div>
+        </article>
+      </div>
+    )
+  }
+
+  // Journal Grid View
   return (
     <div className="pt-24 pb-20 bg-white text-neutral-900 animate-fade-rise">
       {/* Header */}
@@ -131,8 +219,11 @@ const JournalPage: React.FC = () => {
           {filteredArticles.map((art) => (
             <article
               key={art.id}
-              onClick={() => setReadingArticle(art)}
-              className="group cursor-pointer bg-white rounded-3xl border border-neutral-200/80 overflow-hidden hover:shadow-md hover:border-neutral-300 transition-all duration-300 flex flex-col justify-between"
+              onClick={() => {
+                setReadingArticle(art)
+                window.scrollTo({ top: 0, behavior: 'smooth' })
+              }}
+              className="group cursor-pointer bg-neutral-50 rounded-3xl overflow-hidden border border-neutral-200/80 hover:shadow-xl hover:border-neutral-300 transition-all duration-300 flex flex-col justify-between"
             >
               <div className="relative h-72 overflow-hidden bg-neutral-100">
                 <img
@@ -140,11 +231,10 @@ const JournalPage: React.FC = () => {
                   alt={art.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute top-4 left-4 px-3 py-1 bg-black/60 backdrop-blur-md text-white text-xs font-semibold rounded-full">
+                <div className="absolute top-4 left-4 px-3 py-1 bg-black/60 backdrop-blur-md text-white text-xs rounded-full font-medium">
                   {art.category}
                 </div>
               </div>
-
               <div className="p-8 flex-1 flex flex-col justify-between">
                 <div>
                   <div className="flex items-center gap-3 text-xs text-neutral-400 mb-3">
@@ -177,49 +267,6 @@ const JournalPage: React.FC = () => {
           ))}
         </div>
       </section>
-
-      {/* Reader Modal */}
-      {readingArticle && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-fade-rise">
-          <div className="bg-white max-w-3xl w-full rounded-3xl overflow-hidden shadow-2xl relative max-h-[90vh] flex flex-col">
-            <div className="relative h-64 sm:h-80 w-full shrink-0">
-              <img src={readingArticle.image} alt={readingArticle.title} className="w-full h-full object-cover" />
-              <button
-                onClick={() => setReadingArticle(null)}
-                className="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-black transition-colors"
-              >
-                <XIcon size={18} />
-              </button>
-            </div>
-            <div className="p-8 overflow-y-auto space-y-6">
-              <div>
-                <span className="text-xs font-semibold text-amber-600 uppercase tracking-widest">
-                  {readingArticle.category} • {readingArticle.date}
-                </span>
-                <h2 className="text-4xl font-serif text-neutral-900 mt-1" style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}>
-                  {readingArticle.title}
-                </h2>
-                <span className="text-xs text-neutral-400 block mt-1">By {readingArticle.author}</span>
-              </div>
-
-              <div className="space-y-4 text-sm text-neutral-700 leading-relaxed">
-                {readingArticle.fullText.map((p, idx) => (
-                  <p key={idx}>{p}</p>
-                ))}
-              </div>
-
-              <div className="pt-6 border-t border-neutral-100 flex justify-end">
-                <button
-                  onClick={() => setReadingArticle(null)}
-                  className="px-6 py-2.5 bg-neutral-900 text-white text-xs font-medium rounded-full"
-                >
-                  Close Article
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   )
 }
