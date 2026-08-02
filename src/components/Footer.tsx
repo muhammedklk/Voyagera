@@ -44,17 +44,17 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <ul className="space-y-2 text-xs text-neutral-600">
               <li>
                 <a href="#home" onClick={(e) => handleNav('home', e)} className="hover:text-neutral-900 transition-colors">
-                  Home Overview
+                  Home
                 </a>
               </li>
               <li>
                 <a href="#studio" onClick={(e) => handleNav('studio', e)} className="hover:text-neutral-900 transition-colors">
-                  Studio & Architecture
+                  Destinations & Sanctuaries
                 </a>
               </li>
               <li>
                 <a href="#about" onClick={(e) => handleNav('about', e)} className="hover:text-neutral-900 transition-colors">
-                  About Philosophy
+                  About Us
                 </a>
               </li>
               <li>
@@ -64,7 +64,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </li>
               <li>
                 <a href="#reachus" onClick={(e) => handleNav('reachus', e)} className="hover:text-neutral-900 transition-colors">
-                  Reach Us & Concierge
+                  Contact Us & Concierge
                 </a>
               </li>
             </ul>

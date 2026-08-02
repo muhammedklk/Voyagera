@@ -10,10 +10,10 @@ interface NavbarProps {
 
 const NAV_ITEMS: { label: string; page: PageId }[] = [
   { label: 'Home', page: 'home' },
-  { label: 'Studio', page: 'studio' },
-  { label: 'About', page: 'about' },
+  { label: 'Destinations', page: 'studio' },
+  { label: 'About Us', page: 'about' },
   { label: 'Journal', page: 'journal' },
-  { label: 'Reach Us', page: 'reachus' },
+  { label: 'Contact Us', page: 'reachus' },
 ]
 
 const Navbar: React.FC<NavbarProps> = ({ activePage = 'home', onNavigate }) => {
