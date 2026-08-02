@@ -185,7 +185,7 @@ const JournalPage: React.FC = () => {
           </div>
 
           {/* Hero Feature Image */}
-          <div className="relative h-[400px] sm:h-[540px] w-full rounded-3xl overflow-hidden shadow-2xl mb-16">
+          <div className="relative h-[400px] sm:h-[540px] w-full rounded-3xl overflow-hidden mb-16">
             <img
               src={readingArticle.image}
               alt={readingArticle.title}
