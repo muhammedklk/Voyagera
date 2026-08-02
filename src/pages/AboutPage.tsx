@@ -72,25 +72,25 @@ const TEAM = [
   {
     name: 'Julian Von Bern',
     role: 'Co-Founder & Chief Architect',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop',
     bio: 'Former principal at ETH Zurich Spatial Lab. 15+ years designing high-altitude alpine sanctuaries.',
   },
   {
     name: 'Kiyomi Takahashi',
     role: 'Co-Founder & Cultural Curator',
-    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=800&auto=format&fit=crop',
     bio: 'Kyoto native with deep lineage in Japanese tea ceremony, garden design, and historic estate preservation.',
   },
   {
     name: 'Dr. Alistair Sterling',
     role: 'Head of Expedition & Wilderness Safety',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop',
     bio: 'Veteran polar explorer and ecologist. Guiding private expeditions across Chilean fjords and Iceland glaciers.',
   },
   {
     name: 'Camille Laurent',
     role: 'Gastronomy & Sommelier Director',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=800&auto=format&fit=crop',
     bio: '3-Star Michelin alumna specializing in farm-to-table foraging and bio-dynamic wine pairing.',
   },
 ]
@@ -203,13 +203,34 @@ const AboutPage: React.FC = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {TEAM.map((member, idx) => (
-            <div key={idx} className="bg-white border border-neutral-200 rounded-3xl p-6 shadow-sm hover:shadow-md hover:border-neutral-300 transition-all duration-300">
-              <img src={member.image} alt={member.name} className="w-20 h-20 rounded-full object-cover mb-4 ring-2 ring-neutral-100" />
-              <h3 className="text-lg font-serif text-neutral-900" style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}>
-                {member.name}
-              </h3>
-              <span className="text-xs text-amber-600 font-semibold block mb-2">{member.role}</span>
-              <p className="text-xs text-neutral-500 leading-relaxed">{member.bio}</p>
+            <div
+              key={idx}
+              className="group bg-neutral-50 border border-neutral-200/80 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:border-neutral-300 transition-all duration-300 flex flex-col justify-between"
+            >
+              <div className="relative h-64 overflow-hidden bg-neutral-100">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/60 via-transparent to-transparent pointer-events-none" />
+              </div>
+              <div className="p-6 flex-1 flex flex-col justify-between text-center">
+                <div>
+                  <h3
+                    className="text-2xl font-serif text-neutral-900"
+                    style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
+                  >
+                    {member.name}
+                  </h3>
+                  <span className="inline-block mt-1 px-3 py-0.5 rounded-full bg-amber-500/10 text-amber-700 text-[11px] font-semibold tracking-wide">
+                    {member.role}
+                  </span>
+                  <p className="text-xs text-neutral-500 leading-relaxed font-sans mt-3">
+                    {member.bio}
+                  </p>
+                </div>
+              </div>
             </div>
           ))}
         </div>
