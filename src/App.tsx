@@ -76,7 +76,7 @@ const App: React.FC = () => {
 
       {activePage === 'studio' && (
         <main className="relative z-10">
-          <StudioPage />
+          <StudioPage onSelectDestination={handleSelectDestination} />
         </main>
       )}
 
