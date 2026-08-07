@@ -305,7 +305,7 @@ export const AkkanamIcon: React.FC<IconProps> = ({ size = 24, className = '', ..
   </svg>
 )
 
-export const ShieldCheckIcon: React.FC<IconProps> = ({ size = 20, className = '', ...props }) => (
+export const CheckIcon: React.FC<IconProps> = ({ size = 20, className = '', ...props }) => (
   <svg
     width={size}
     height={size}
@@ -318,8 +318,7 @@ export const ShieldCheckIcon: React.FC<IconProps> = ({ size = 20, className = ''
     className={className}
     {...props}
   >
-    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-    <path d="m9 12 2 2 4-4" />
+    <polyline points="20 6 9 17 4 12" />
   </svg>
 )
 
@@ -377,4 +376,5 @@ export const AwardIcon: React.FC<IconProps> = ({ size = 20, className = '', ...p
     <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
   </svg>
 )
+
 
