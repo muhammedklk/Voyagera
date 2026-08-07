@@ -1,9 +1,24 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { SparklesIcon, QuoteIcon, AkkanamIcon, CompassIcon, ShieldCheckIcon, LeafIcon, ArchIcon, ArrowRightIcon } from '../components/Icons'
+import {
+  SparklesIcon,
+  QuoteIcon,
+  CompassIcon,
+  GlobeIcon,
+  ShieldCheckIcon,
+  LeafIcon,
+  BuildingIcon,
+  AwardIcon,
+  CheckCircleIcon,
+  ArrowRightIcon,
+  UsersIcon,
+  StarIcon,
+  XIcon,
+} from '../components/Icons'
 
 interface CounterProps {
   target: number
   suffix?: string
+  prefix?: string
   decimals?: number
   duration?: number
   formatter?: (val: number) => string
@@ -12,8 +27,9 @@ interface CounterProps {
 const AnimatedCounter: React.FC<CounterProps> = ({
   target,
   suffix = '',
+  prefix = '',
   decimals = 0,
-  duration = 2000,
+  duration = 2200,
   formatter,
 }) => {
   const [count, setCount] = useState(0)
@@ -62,364 +78,416 @@ const AnimatedCounter: React.FC<CounterProps> = ({
 
   return (
     <span ref={ref}>
+      {prefix}
       {formattedVal}
       {suffix}
     </span>
   )
 }
 
-// Akkanam Triad Pillars Data
-const AKKANAM_PILLARS = [
-  {
-    id: 'solitude',
-    dotIndex: 0,
-    title: 'Primal Solitude',
-    subtitle: 'The Apex Dot',
-    tagline: 'Undisturbed silence & off-grid architectural retreats',
-    description:
-      'We curate sanctuaries situated beyond public reach—high alpine ridges, hidden teak forests, and private sea cliffs where true silence allows the mind to expand.',
-    icon: CompassIcon,
-    accentBg: 'bg-amber-50 border-amber-300/80 text-amber-900',
-    badgeClass: 'bg-amber-100 text-amber-800 border-amber-200',
-    dotPositionClass: 'top-0 left-1/2 -translate-x-1/2',
-    stats: '100% Unlisted Locations',
-  },
-  {
-    id: 'architecture',
-    dotIndex: 1,
-    title: 'Architectural Harmony',
-    subtitle: 'The Left Base Dot',
-    tagline: 'Structures that dissolve into natural topography',
-    description:
-      'Every property features sustainable, organic design—rammed earth walls, triple-glazed panoramic glass, and solar-integrated timber built to honor local landscape contours.',
-    icon: ArchIcon,
-    accentBg: 'bg-emerald-50 border-emerald-300/80 text-emerald-900',
-    badgeClass: 'bg-emerald-100 text-emerald-800 border-emerald-200',
-    dotPositionClass: 'bottom-0 left-0',
-    stats: 'Zero Visual Noise',
-  },
-  {
-    id: 'stewardship',
-    dotIndex: 2,
-    title: 'Ecosystem Stewardship',
-    subtitle: 'The Right Base Dot',
-    tagline: 'Leaving ancient wilderness untouched for generations',
-    description:
-      '5% of every sanctuary booking flows directly into local land trusts, glacial preservation funds, and indigenous timber reforestation programs.',
-    icon: LeafIcon,
-    accentBg: 'bg-teal-50 border-teal-300/80 text-teal-900',
-    badgeClass: 'bg-teal-100 text-teal-800 border-teal-200',
-    dotPositionClass: 'bottom-0 right-0',
-    stats: '100% Carbon Negative',
-  },
-]
+interface TeamMember {
+  name: string
+  role: string
+  category: 'Leadership' | 'Expeditions' | 'Culture'
+  image: string
+  bio: string
+  quote: string
+  location: string
+  specialty: string
+}
 
-const MILESTONES = [
-  {
-    year: '2022',
-    title: 'The Voyagera Genesis',
-    desc: 'Founded in Zurich by architects Julian Von Bern and Kiyomi Takahashi to challenge performative luxury travel.',
-  },
-  {
-    year: '2023',
-    title: 'Alpine & Kyoto Expansion',
-    desc: 'Secured exclusive stewardship over 18 unlisted private residences across the Swiss Alps and Kyoto bamboo groves.',
-  },
-  {
-    year: '2024',
-    title: 'Zero-Footprint Charter',
-    desc: 'Pledged 5% of net booking revenue to land trusts, planting over 12,500 native trees across protected biomes.',
-  },
-  {
-    year: '2025',
-    title: 'The Akkanam Protocol',
-    desc: 'Introduced the Akkanam Triad Philosophy standard for noise pollution reduction and ecosystem integrity.',
-  },
-]
-
-const TEAM = [
+const TEAM: TeamMember[] = [
   {
     name: 'Julian Von Bern',
     role: 'Co-Founder & Chief Architect',
+    category: 'Leadership',
     image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop',
-    bio: 'Former principal at ETH Zurich Spatial Lab. 15+ years designing high-altitude alpine sanctuaries.',
+    bio: 'Former principal at ETH Zurich Spatial Lab. 15+ years designing high-altitude alpine sanctuaries with zero ecological impact.',
+    quote: 'True luxury is not about ornamentation; it is the privilege of undisturbed solitude framed by pure architecture.',
+    location: 'Engadin, Switzerland',
+    specialty: 'Sustainable High-Altitude Design',
   },
   {
     name: 'Kiyomi Takahashi',
     role: 'Co-Founder & Cultural Curator',
+    category: 'Leadership',
     image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=800&auto=format&fit=crop',
-    bio: 'Kyoto native with deep lineage in Japanese tea ceremony, garden design, and historic estate preservation.',
+    bio: 'Kyoto native with deep lineage in Japanese tea ceremony, zen garden design, and historic estate preservation.',
+    quote: 'We curate spaces where time slows down, honoring ancestral craftsmanship and mindful stillness.',
+    location: 'Kyoto, Japan',
+    specialty: 'Historic Estate Preservation',
   },
   {
     name: 'Dr. Alistair Sterling',
-    role: 'Head of Expedition & Wilderness Safety',
+    role: 'Head of Wilderness Expeditions',
+    category: 'Expeditions',
     image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop',
-    bio: 'Veteran polar explorer and ecologist. Guiding private expeditions across Chilean fjords and Iceland glaciers.',
+    bio: 'Veteran polar explorer and glaciologist. Guiding private expeditions across Chilean fjords, Iceland glaciers, and Svalbard.',
+    quote: 'Wilderness is not a place to conquer; it is a sanctuary to listen, respect, and reconnect.',
+    location: 'Reykjavik, Iceland',
+    specialty: 'Polar Navigation & Conservation',
   },
   {
     name: 'Camille Laurent',
-    role: 'Gastronomy & Sommelier Director',
+    role: 'Gastronomy & Farm Director',
+    category: 'Culture',
     image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=800&auto=format&fit=crop',
-    bio: '3-Star Michelin alumna specializing in farm-to-table foraging and bio-dynamic wine pairing.',
+    bio: '3-Star Michelin alumna specializing in wild foraging, organic estate agriculture, and biodynamic wine pairing.',
+    quote: 'Every meal in our sanctuaries tells the story of the surrounding soil, flora, and season.',
+    location: 'Provence, France',
+    specialty: 'Wild Foraging & Farm-to-Table',
   },
 ]
 
-const AboutPage: React.FC = () => {
-  const [activePillarIndex, setActivePillarIndex] = useState<number>(0)
-  const activePillar = AKKANAM_PILLARS[activePillarIndex]
+const TIMELINE_DATA = [
+  {
+    year: '2022',
+    title: 'The Founding Principle',
+    badge: 'Genesis',
+    description:
+      'Frustrated by noisy, overcrowded resort travel, Julian & Kiyomi acquired 3 off-market alpine sanctuaries in Switzerland & Kyoto, establishing the anti-dote to performative luxury.',
+    metrics: '3 Initial Havens • 100% Off-Market Access',
+  },
+  {
+    year: '2023',
+    title: 'Architectural Curation',
+    badge: 'Expansion',
+    description:
+      'Expanded our global portfolio to 14 hand-curated private estates. Formed strategic partnerships with regional land trusts in Iceland and Norwegian fjords.',
+    metrics: '14 Sanctuaries • 6 Countries Certified',
+  },
+  {
+    year: '2024',
+    title: 'Zero-Trace Guarantee',
+    badge: 'Sustainability',
+    description:
+      'Instituted our 100% Zero-Trace Guarantee, directing 5% of all net booking proceeds toward direct habitat restoration and carbon micro-offsetting.',
+    metrics: '12,500+ Trees Planted • 100% Offset',
+  },
+  {
+    year: '2025',
+    title: 'Bespoke Sanctuary Network',
+    badge: 'Present Day',
+    description:
+      'Operating 24+ ultra-private architectural sanctuaries across 12 pristine regions worldwide, served by dedicated private concierges.',
+    metrics: '24+ Sanctuaries • 99.4% Satisfaction Rate',
+  },
+]
+
+const PILLARS = [
+  {
+    id: 'architecture',
+    icon: BuildingIcon,
+    title: 'Architectural Integrity',
+    subtitle: 'Spaces designed to harmonally melt into untouched topography.',
+    detail:
+      'Each sanctuary is selected or built with strict architectural standards — using raw local stone, charred cedar, and floor-to-ceiling glass that turns the landscape into living canvas.',
+  },
+  {
+    id: 'privacy',
+    icon: ShieldCheckIcon,
+    title: 'Absolute Solitude',
+    subtitle: 'Off-grid sanctuaries with zero light pollution and zero noise.',
+    detail:
+      'We enforce total privacy for high-profile voyagers. Private helicopter landing zones, encrypted communications, and unlisted physical coordinates ensure complete tranquility.',
+  },
+  {
+    id: 'conservation',
+    icon: LeafIcon,
+    title: 'Zero-Footprint Pledge',
+    subtitle: 'Leaving ecosystems stronger than we found them.',
+    detail:
+      '5% of every reservation is funneled directly into local land trusts, native forest regeneration, and ocean preservation projects in the sanctuary’s host country.',
+  },
+  {
+    id: 'concierge',
+    icon: CompassIcon,
+    title: 'Bespoke Curation',
+    subtitle: 'Tailored itineraries with Michelin-grade dining and master guides.',
+    detail:
+      'From private stargazing sessions with astrophysicists to farm-to-table dining prepared by local culinary masters, every detail is crafted around your personal rhythm.',
+  },
+]
+
+const PRESS_QUOTES = [
+  {
+    publication: 'Architectural Digest',
+    quote: 'Voyagera has quietly redefined what luxury means in the 21st century: pure stillness framed by extraordinary architecture.',
+    author: 'Elena Rostova, Senior Editor',
+  },
+  {
+    publication: 'Wallpaper* Magazine',
+    quote: 'The antithesis of grand hotels — an intimate portfolio of unlisted sanctuaries where design meets wilderness.',
+    author: 'Marcus Vance, Design Critic',
+  },
+  {
+    publication: 'Robb Report',
+    quote: 'For those who seek silence over spectacle, Voyagera’s private sanctuaries offer an unparalleled retreat for the soul.',
+    author: 'Jonathan Sterling, Luxury Travel Editor',
+  },
+  {
+    publication: 'Condé Nast Traveler',
+    quote: 'A masterclass in sustainable, eco-conscious private travel. Every sanctuary feels like a secret world.',
+    author: 'Sophia Chen, Global Destinations',
+  },
+]
+
+interface AboutPageProps {
+  onNavigate?: (page: string) => void
+}
+
+const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
+  const [activeYear, setActiveYear] = useState('2025')
+  const [activeTeamFilter, setActiveTeamFilter] = useState<'All' | 'Leadership' | 'Expeditions' | 'Culture'>('All')
+  const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null)
+  const [selectedPillar, setSelectedPillar] = useState<(typeof PILLARS)[0] | null>(null)
+  const [activePress, setActivePress] = useState(0)
+  const [showFullLetter, setShowFullLetter] = useState(false)
+  const [videoModalOpen, setVideoModalOpen] = useState(false)
+
+  const filteredTeam =
+    activeTeamFilter === 'All'
+      ? TEAM
+      : TEAM.filter((member) => member.category === activeTeamFilter)
+
+  const activeTimelineItem = TIMELINE_DATA.find((t) => t.year === activeYear) || TIMELINE_DATA[3]
 
   return (
-    <div className="bg-stone-50/60 text-neutral-900 min-h-screen font-sans animate-fade-rise overflow-x-hidden pt-20">
-      
-      {/* ========================================================================= */}
-      {/* 1. AKKANAM HERO SECTION (LIGHT THEME) */}
-      {/* ========================================================================= */}
-      <section className="relative pt-16 pb-20 px-6 max-w-7xl mx-auto overflow-hidden">
-        {/* Ambient Soft Amber & Emerald Glows */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-amber-200/40 rounded-full blur-[130px] pointer-events-none" />
-        <div className="absolute top-1/3 left-1/4 w-[350px] h-[350px] bg-emerald-100/50 rounded-full blur-[110px] pointer-events-none" />
+    <div className="bg-stone-50/40 text-stone-900 min-h-screen animate-fade-rise selection:bg-amber-100 selection:text-amber-900">
+      {/* 
+        ========================================================================
+        1. INNER PAGE HERO SECTION WITH BACKGROUND IMAGE (LIGHT THEME)
+        ========================================================================
+      */}
+      <section className="relative pt-28 pb-20 sm:pt-36 sm:pb-28 overflow-hidden">
+        {/* Background Image with Light Glass Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2000&auto=format&fit=crop"
+            alt="Voyagera Sanctuary Background"
+            className="w-full h-full object-cover object-center scale-105 filter brightness-105 contrast-95"
+          />
+          {/* Light-theme Gradients & Frosted Overlays */}
+          <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/80 to-stone-50/95" />
+          <div className="absolute inset-0 bg-radial-at-c from-amber-50/30 via-transparent to-transparent pointer-events-none" />
+          {/* Subtle grid pattern overlay */}
+          <div
+            className="absolute inset-0 opacity-[0.03] pointer-events-none"
+            style={{
+              backgroundImage: `radial-gradient(#1c1917 1px, transparent 1px)`,
+              backgroundSize: '32px 32px',
+            }}
+          />
+        </div>
 
-        {/* Subtle Decorative Radial Dot Grid */}
-        <div 
-          className="absolute inset-0 opacity-[0.07] pointer-events-none"
-          style={{
-            backgroundImage: `radial-gradient(circle, rgba(0,0,0,0.8) 1px, transparent 1px)`,
-            backgroundSize: '28px 28px',
-          }}
-        />
+        {/* Hero Content Container */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
+          {/* Breadcrumb Navigation */}
+          <div className="flex items-center justify-center gap-2 text-xs uppercase tracking-widest text-stone-500 font-medium mb-6">
+            <span
+              onClick={() => onNavigate && onNavigate('home')}
+              className="hover:text-amber-800 cursor-pointer transition-colors"
+            >
+              Home
+            </span>
+            <span>/</span>
+            <span className="text-amber-900 font-semibold">About Voyagera</span>
+          </div>
 
-        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
-          {/* Left Column: Hero Header & Intro */}
-          <div className="lg:col-span-7 space-y-6 text-left">
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-600/20 text-amber-900 text-xs font-semibold uppercase tracking-widest backdrop-blur-md shadow-sm">
-              <AkkanamIcon size={16} className="text-amber-700 animate-pulse" />
-              <span>Akkanam Triad Philosophy • அஃகனம்</span>
+          {/* Hero Card Container - Frosted Glass Light Box */}
+          <div className="max-w-4xl mx-auto text-center backdrop-blur-xl bg-white/70 border border-white/90 p-8 sm:p-14 rounded-3xl shadow-2xl shadow-stone-300/40">
+            {/* Top Pill Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-800 text-xs font-semibold uppercase tracking-widest mb-6">
+              <SparklesIcon size={14} className="text-amber-600 animate-pulse" />
+              The Voyagera Genesis & Philosophy
             </div>
 
+            {/* Main Headline */}
             <h1
-              className="text-5xl sm:text-7xl font-serif text-neutral-900 tracking-tight leading-[1.05]"
+              className="text-4xl sm:text-6xl lg:text-7xl font-serif text-stone-900 leading-[1.08] tracking-tight"
               style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
             >
-              Crafting Havens for the <span className="italic text-amber-700">Thoughtful Soul</span>
+              Crafting Architectural Havens for the Thoughtful Soul
             </h1>
 
-            <p className="text-base sm:text-xl text-neutral-600 max-w-2xl leading-relaxed font-light">
-              Rooted in the ancient Tamil concept of <strong className="text-neutral-900 font-semibold">Akkanam (ஃ)</strong>—the three sacred points of balance, solitude, and completeness—Voyagera curates disturbance-free sanctuaries across Earth’s quietest landscapes.
+            {/* Subtitle */}
+            <p className="text-base sm:text-lg text-stone-600 max-w-2xl mx-auto mt-6 leading-relaxed font-sans font-light">
+              Founded on the principle that true luxury is not performative noise, but undisturbed stillness, untouched wilderness, and deep architectural harmony.
             </p>
 
-            <div className="pt-4 flex flex-wrap items-center gap-4">
-              <a
-                href="#akkanam-pillars"
-                className="px-6 py-3.5 rounded-full bg-neutral-900 text-white font-semibold text-sm hover:bg-neutral-800 transition-all duration-300 shadow-lg shadow-neutral-900/10 flex items-center gap-2"
+            {/* Action Buttons */}
+            <div className="flex flex-wrap items-center justify-center gap-4 mt-9">
+              <button
+                onClick={() => {
+                  const elem = document.getElementById('founder-letter')
+                  elem?.scrollIntoView({ behavior: 'smooth' })
+                }}
+                className="px-7 py-3.5 rounded-full bg-stone-900 hover:bg-stone-800 text-white text-xs font-semibold uppercase tracking-wider transition-all duration-200 shadow-md hover:shadow-lg flex items-center gap-2 group"
               >
-                <span>Explore The 3 Pillars</span>
-                <ArrowRightIcon size={16} />
-              </a>
+                <span>Read Our Heritage Story</span>
+                <ArrowRightIcon size={15} className="group-hover:translate-x-1 transition-transform" />
+              </button>
 
-              <a
-                href="#founder-story"
-                className="px-6 py-3.5 rounded-full bg-white border border-neutral-300 text-neutral-800 font-medium text-sm hover:bg-neutral-100 hover:border-neutral-400 transition-all duration-300 shadow-sm"
+              <button
+                onClick={() => setVideoModalOpen(true)}
+                className="px-6 py-3.5 rounded-full bg-white/90 hover:bg-white text-stone-800 border border-stone-200 text-xs font-semibold uppercase tracking-wider transition-all duration-200 shadow-sm hover:shadow-md flex items-center gap-2.5"
               >
-                Read Founder Manifesto
-              </a>
+                <div className="w-5 h-5 rounded-full bg-amber-600 text-white flex items-center justify-center text-[10px]">
+                  ▶
+                </div>
+                <span>Watch Brand Film</span>
+              </button>
             </div>
-          </div>
 
-          {/* Right Column: Interactive Akkanam (ஃ) Emblem Motif (Light Theme Ceramic Card) */}
-          <div className="lg:col-span-5 flex flex-col items-center justify-center relative">
-            <div className="relative w-72 h-72 sm:w-80 sm:h-80 flex items-center justify-center p-6 bg-white/90 rounded-3xl border border-neutral-200/90 shadow-xl backdrop-blur-xl">
-              
-              {/* Triangular Connecting Constellation Lines */}
-              <svg className="absolute inset-0 w-full h-full p-12 pointer-events-none" viewBox="0 0 100 100">
-                <polygon
-                  points="50,15 15,80 85,80"
-                  fill="none"
-                  stroke="rgba(217, 119, 6, 0.3)"
-                  strokeWidth="1.5"
-                  strokeDasharray="4 4"
-                  className="animate-pulse"
-                />
-                {/* Active vector line highlighting selected pillar */}
-                {activePillarIndex === 0 && (
-                  <line x1="50" y1="15" x2="15" y2="80" stroke="#d97706" strokeWidth="2.5" />
-                )}
-                {activePillarIndex === 1 && (
-                  <line x1="15" y1="80" x2="85" y2="80" stroke="#059669" strokeWidth="2.5" />
-                )}
-                {activePillarIndex === 2 && (
-                  <line x1="85" y1="80" x2="50" y2="15" stroke="#0d9488" strokeWidth="2.5" />
-                )}
-              </svg>
-
-              {/* Central Glowing Badge Label */}
-              <div className="text-center z-10 space-y-1">
-                <span className="text-[11px] font-mono text-amber-700 uppercase tracking-widest font-semibold block">
-                  {activePillar.subtitle}
+            {/* Floating Quick Key Stats Array */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-12 pt-10 border-t border-stone-200/80">
+              <div className="p-3 rounded-2xl bg-stone-50/60 border border-stone-200/60">
+                <span className="text-2xl sm:text-3xl font-serif text-amber-900 block" style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}>
+                  <AnimatedCounter target={24} suffix="+" duration={1800} />
                 </span>
-                <h3 
-                  className="text-2xl font-serif text-neutral-900 tracking-wide"
-                  style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
-                >
-                  {activePillar.title}
-                </h3>
-                <span className="inline-block text-[10px] uppercase font-semibold text-neutral-700 bg-neutral-100 px-3 py-0.5 rounded-full border border-neutral-200">
-                  {activePillar.stats}
-                </span>
+                <span className="text-[11px] text-stone-500 font-medium uppercase tracking-wider">Global Estates</span>
               </div>
 
-              {/* Dot 0: APEX DOT (Primal Solitude) */}
-              <button
-                onClick={() => setActivePillarIndex(0)}
-                onMouseEnter={() => setActivePillarIndex(0)}
-                className={`absolute top-6 left-1/2 -translate-x-1/2 group flex flex-col items-center transition-all duration-500 focus:outline-none ${
-                  activePillarIndex === 0 ? 'scale-125 z-20' : 'scale-100 opacity-75 hover:opacity-100'
-                }`}
-                title="Apex Dot: Primal Solitude"
-              >
-                <div className={`w-12 h-12 rounded-full flex items-center justify-center shadow-md transition-all duration-300 ${
-                  activePillarIndex === 0 
-                    ? 'bg-amber-600 text-white ring-4 ring-amber-500/25 shadow-amber-500/30' 
-                    : 'bg-neutral-100 text-amber-800 border border-neutral-300'
-                }`}>
-                  <AkkanamIcon size={20} />
-                </div>
-                <span className="text-[10px] font-mono uppercase tracking-wider font-semibold text-amber-800 mt-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
-                  Solitude
+              <div className="p-3 rounded-2xl bg-stone-50/60 border border-stone-200/60">
+                <span className="text-2xl sm:text-3xl font-serif text-amber-900 block" style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}>
+                  <AnimatedCounter target={100} suffix="%" duration={1600} />
                 </span>
-              </button>
+                <span className="text-[11px] text-stone-500 font-medium uppercase tracking-wider">Carbon Neutral</span>
+              </div>
 
-              {/* Dot 1: LEFT BASE DOT (Architectural Harmony) */}
-              <button
-                onClick={() => setActivePillarIndex(1)}
-                onMouseEnter={() => setActivePillarIndex(1)}
-                className={`absolute bottom-6 left-8 group flex flex-col items-center transition-all duration-500 focus:outline-none ${
-                  activePillarIndex === 1 ? 'scale-125 z-20' : 'scale-100 opacity-75 hover:opacity-100'
-                }`}
-                title="Left Base Dot: Architectural Harmony"
-              >
-                <div className={`w-12 h-12 rounded-full flex items-center justify-center shadow-md transition-all duration-300 ${
-                  activePillarIndex === 1 
-                    ? 'bg-emerald-600 text-white ring-4 ring-emerald-500/25 shadow-emerald-500/30' 
-                    : 'bg-neutral-100 text-emerald-800 border border-neutral-300'
-                }`}>
-                  <ArchIcon size={20} />
-                </div>
-                <span className="text-[10px] font-mono uppercase tracking-wider font-semibold text-emerald-800 mt-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
-                  Architecture
+              <div className="p-3 rounded-2xl bg-stone-50/60 border border-stone-200/60">
+                <span className="text-2xl sm:text-3xl font-serif text-amber-900 block" style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}>
+                  <AnimatedCounter target={99.4} suffix="%" decimals={1} duration={2000} />
                 </span>
-              </button>
+                <span className="text-[11px] text-stone-500 font-medium uppercase tracking-wider">Guest Rating</span>
+              </div>
 
-              {/* Dot 2: RIGHT BASE DOT (Ecosystem Stewardship) */}
-              <button
-                onClick={() => setActivePillarIndex(2)}
-                onMouseEnter={() => setActivePillarIndex(2)}
-                className={`absolute bottom-6 right-8 group flex flex-col items-center transition-all duration-500 focus:outline-none ${
-                  activePillarIndex === 2 ? 'scale-125 z-20' : 'scale-100 opacity-75 hover:opacity-100'
-                }`}
-                title="Right Base Dot: Ecosystem Stewardship"
-              >
-                <div className={`w-12 h-12 rounded-full flex items-center justify-center shadow-md transition-all duration-300 ${
-                  activePillarIndex === 2 
-                    ? 'bg-teal-600 text-white ring-4 ring-teal-500/25 shadow-teal-500/30' 
-                    : 'bg-neutral-100 text-teal-800 border border-neutral-300'
-                }`}>
-                  <LeafIcon size={20} />
-                </div>
-                <span className="text-[10px] font-mono uppercase tracking-wider font-semibold text-teal-800 mt-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
-                  Stewardship
+              <div className="p-3 rounded-2xl bg-stone-50/60 border border-stone-200/60">
+                <span className="text-2xl sm:text-3xl font-serif text-amber-900 block" style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}>
+                  2022
                 </span>
-              </button>
-
+                <span className="text-[11px] text-stone-500 font-medium uppercase tracking-wider">Founded</span>
+              </div>
             </div>
-
-            <p className="text-xs text-neutral-500 text-center mt-4 font-mono tracking-wide">
-              ✦ Hover or click any dot to inspect its Akkanam Pillar
-            </p>
           </div>
-
         </div>
       </section>
 
-      {/* ========================================================================= */}
-      {/* 2. THREE PILLARS OF AKKANAM CARDS (LIGHT THEME) */}
-      {/* ========================================================================= */}
-      <section id="akkanam-pillars" className="py-16 px-6 max-w-7xl mx-auto border-t border-neutral-200/80">
-        <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
-          <span className="text-xs font-semibold uppercase tracking-widest text-amber-700 font-mono">
-            The Three Sacred Points of Equilibrium
+      {/* 
+        ========================================================================
+        2. FOUNDER LETTER & VISION SECTION (LIGHT THEME)
+        ========================================================================
+      */}
+      <section id="founder-letter" className="max-w-6xl mx-auto px-6 py-16 sm:py-24">
+        <div className="bg-gradient-to-br from-white via-amber-50/40 to-stone-50 border border-amber-900/10 rounded-3xl p-8 sm:p-16 shadow-xl relative overflow-hidden">
+          <QuoteIcon size={120} className="text-amber-800/10 absolute -top-4 -right-4 pointer-events-none" />
+
+          <div className="max-w-3xl mx-auto space-y-6 relative z-10">
+            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-amber-800">
+              <AwardIcon size={16} className="text-amber-600" />
+              <span>A Note From Our Founders</span>
+            </div>
+
+            <h2
+              className="text-3xl sm:text-4xl lg:text-5xl font-serif text-stone-900 leading-tight"
+              style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
+            >
+              "We created Voyagera to be the anti-dote to noisy luxury."
+            </h2>
+
+            <div className="space-y-4 text-stone-600 text-sm sm:text-base leading-relaxed font-sans font-light">
+              <p>
+                When we launched Voyagera in 2022, we observed a troubling trend in high-end travel: luxury had become performative. Five-star hotels felt crowded, itineraries felt scripted, and true solitude was almost impossible to purchase.
+              </p>
+
+              <p>
+                Our response was radical simplicity. We negotiated exclusive private access to unlisted architectural residences around the world — places where you hear only the wind through bamboo or alpine mist against triple-glazed glass.
+              </p>
+
+              {showFullLetter && (
+                <div className="space-y-4 pt-2 border-t border-amber-200/60 animate-fade-rise">
+                  <p>
+                    Every residence in our private portfolio is hand-selected not for brand labels, but for architectural soul and environmental harmony. We believe that true rejuvenation occurs when human craftsmanship yields to nature’s grandeur.
+                  </p>
+                  <p>
+                    Whether you are spending a fortnight deep in the Kyoto bamboo groves or meditating over an Icelandic glacier, our dedicated concierges ensure your presence leaves zero trace on the ecosystem, while restoring your spirit.
+                  </p>
+                </div>
+              )}
+            </div>
+
+            <div className="pt-6 flex flex-wrap items-center justify-between gap-6 border-t border-amber-200/60">
+              <div className="flex items-center gap-4">
+                <div className="w-14 h-14 rounded-full bg-stone-900 text-amber-100 font-serif flex items-center justify-center text-xl shadow-md">
+                  V
+                </div>
+                <div>
+                  <h4 className="text-base font-semibold text-stone-900 font-sans">Julian & Kiyomi</h4>
+                  <p className="text-xs text-stone-500 font-sans">Co-Founders, Voyagera Private Sanctuaries</p>
+                </div>
+              </div>
+
+              <button
+                onClick={() => setShowFullLetter(!showFullLetter)}
+                className="text-xs font-semibold text-amber-900 hover:text-amber-700 underline underline-offset-4 transition-colors"
+              >
+                {showFullLetter ? 'Collapse Letter' : 'Read Full Manifesto'}
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 
+        ========================================================================
+        3. FOUR CORE PILLARS OF LUXURY (INTERACTIVE CARDS)
+        ========================================================================
+      */}
+      <section className="max-w-7xl mx-auto px-6 py-16 sm:py-20">
+        <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
+          <span className="text-xs font-semibold uppercase tracking-widest text-amber-800">
+            Our Architectural Foundations
           </span>
           <h2
-            className="text-4xl sm:text-5xl font-serif text-neutral-900 tracking-tight"
+            className="text-4xl sm:text-5xl font-serif text-stone-900"
             style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
           >
-            The Akkanam Triad Standard
+            The Four Pillars of Voyagera
           </h2>
-          <p className="text-sm text-neutral-600 font-light leading-relaxed">
-            Every sanctuary in our collection must satisfy all three nodes of the Akkanam emblem before being made available to Voyagera private members.
+          <p className="text-sm sm:text-base text-stone-500 max-w-xl mx-auto leading-relaxed">
+            Every sanctuary and journey in our portfolio is benchmarked against four uncompromising principles.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {AKKANAM_PILLARS.map((pillar, idx) => {
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {PILLARS.map((pillar) => {
             const Icon = pillar.icon
-            const isActive = activePillarIndex === idx
-
             return (
               <div
                 key={pillar.id}
-                onClick={() => setActivePillarIndex(idx)}
-                className={`cursor-pointer group p-8 rounded-3xl border transition-all duration-500 relative overflow-hidden flex flex-col justify-between ${
-                  isActive
-                    ? `${pillar.accentBg} shadow-xl ring-2 ring-amber-500/20 scale-[1.02]`
-                    : 'bg-white border-neutral-200/90 shadow-sm hover:shadow-lg hover:border-neutral-300'
-                }`}
+                onClick={() => setSelectedPillar(pillar)}
+                className="group cursor-pointer bg-white border border-stone-200/80 rounded-3xl p-8 shadow-sm hover:shadow-xl hover:border-amber-400/60 transition-all duration-300 flex flex-col justify-between"
               >
-                {/* Background Watermark Number */}
-                <span className="absolute top-4 right-6 text-6xl font-serif text-neutral-200/60 select-none font-bold">
-                  0{idx + 1}
-                </span>
-
-                <div className="relative z-10 space-y-6">
-                  <div className="flex items-center justify-between">
-                    <div className={`p-3.5 rounded-2xl border ${
-                      isActive 
-                        ? 'bg-white border-amber-300 shadow-sm text-amber-700' 
-                        : 'bg-neutral-100 border-neutral-200 text-neutral-700'
-                    }`}>
-                      <Icon size={24} />
-                    </div>
-                    <span className="text-[11px] font-mono uppercase tracking-widest text-neutral-500 font-semibold">
-                      {pillar.subtitle}
-                    </span>
+                <div>
+                  <div className="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-800 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-amber-600 group-hover:text-white transition-all duration-300">
+                    <Icon size={24} />
                   </div>
 
-                  <div>
-                    <h3
-                      className="text-2xl font-serif text-neutral-900 mb-2"
-                      style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
-                    >
-                      {pillar.title}
-                    </h3>
-                    <p className="text-xs font-semibold text-amber-800 mb-3">
-                      {pillar.tagline}
-                    </p>
-                    <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed font-light">
-                      {pillar.description}
-                    </p>
-                  </div>
+                  <h3
+                    className="text-2xl font-serif text-stone-900 mb-2"
+                    style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
+                  >
+                    {pillar.title}
+                  </h3>
+
+                  <p className="text-xs text-stone-500 font-sans leading-relaxed mb-4">
+                    {pillar.subtitle}
+                  </p>
                 </div>
 
-                <div className="pt-6 mt-6 border-t border-neutral-200/80 flex items-center justify-between relative z-10">
-                  <span className={`text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded-full border ${pillar.badgeClass}`}>
-                    {pillar.stats}
-                  </span>
-                  <span className={`text-xs font-semibold flex items-center gap-1 transition-transform duration-300 ${
-                    isActive ? 'text-amber-800 translate-x-1' : 'text-neutral-500 group-hover:text-neutral-900'
-                  }`}>
-                    <span>View Detail</span>
-                    <ArrowRightIcon size={14} />
-                  </span>
+                <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-semibold text-amber-900">
+                  <span>Learn Pillar</span>
+                  <ArrowRightIcon size={14} className="group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
             )
@@ -427,74 +495,116 @@ const AboutPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ========================================================================= */}
-      {/* 3. FOUNDER MANIFESTO & STORY (LIGHT THEME) */}
-      {/* ========================================================================= */}
-      <section id="founder-story" className="py-16 px-6 max-w-6xl mx-auto">
-        <div className="bg-stone-100/90 rounded-3xl p-8 sm:p-14 border border-stone-200/90 relative overflow-hidden shadow-md">
-          <QuoteIcon size={120} className="text-stone-300/40 absolute top-6 right-8 pointer-events-none" />
-
-          <div className="relative z-10 space-y-6 max-w-3xl">
-            <span className="text-xs font-semibold uppercase tracking-widest text-amber-700 flex items-center gap-2">
-              <SparklesIcon size={14} /> Co-Founders' Dispatch
+      {/* 
+        ========================================================================
+        4. INTERACTIVE TIMELINE & MILESTONES (LIGHT THEME)
+        ========================================================================
+      */}
+      <section className="max-w-6xl mx-auto px-6 py-16 sm:py-24">
+        <div className="bg-white border border-stone-200 rounded-3xl p-8 sm:p-14 shadow-lg">
+          <div className="text-center max-w-2xl mx-auto mb-10 space-y-2">
+            <span className="text-xs font-semibold uppercase tracking-widest text-amber-800">
+              Our Journey Over Time
             </span>
-
             <h2
-              className="text-3xl sm:text-5xl font-serif text-neutral-900 leading-tight"
+              className="text-3xl sm:text-4xl font-serif text-stone-900"
               style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
             >
-              "We built Voyagera to be the anti-dote to performative, noisy luxury."
+              The Evolution of Voyagera
             </h2>
+          </div>
 
-            <p className="text-sm sm:text-base text-neutral-700 leading-relaxed font-light">
-              When we started Voyagera in 2022, we observed a troubling shift: high-end travel had become performative. Five-star hotels felt crowded, itineraries felt scripted, and true stillness was impossible to purchase.
+          {/* Timeline Year Tabs */}
+          <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
+            {TIMELINE_DATA.map((t) => (
+              <button
+                key={t.year}
+                onClick={() => setActiveYear(t.year)}
+                className={`px-6 py-2.5 rounded-full text-xs font-semibold tracking-wider transition-all duration-200 ${
+                  activeYear === t.year
+                    ? 'bg-stone-900 text-white shadow-md'
+                    : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
+                }`}
+              >
+                {t.year} — {t.badge}
+              </button>
+            ))}
+          </div>
+
+          {/* Timeline Content Card */}
+          <div className="bg-stone-50/80 rounded-2xl p-6 sm:p-10 border border-stone-200/70 max-w-3xl mx-auto space-y-4 animate-fade-rise">
+            <div className="flex items-center justify-between flex-wrap gap-2">
+              <span className="text-4xl font-serif text-amber-900" style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}>
+                {activeTimelineItem.year}
+              </span>
+              <span className="px-3 py-1 bg-amber-500/10 text-amber-800 text-xs font-semibold rounded-full uppercase tracking-wider">
+                {activeTimelineItem.badge}
+              </span>
+            </div>
+
+            <h3
+              className="text-2xl sm:text-3xl font-serif text-stone-900"
+              style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
+            >
+              {activeTimelineItem.title}
+            </h3>
+
+            <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-sans font-light">
+              {activeTimelineItem.description}
             </p>
 
-            <p className="text-sm sm:text-base text-neutral-700 leading-relaxed font-light">
-              Our response was the <strong className="text-neutral-900 font-semibold">Akkanam Philosophy</strong>. We negotiated exclusive private access to unlisted architectural sanctuaries around the world—places where you hear only the wind through bamboo or mountain mist against triple-glazed glass.
-            </p>
-
-            <div className="pt-6 flex items-center gap-4 border-t border-stone-200">
-              <div className="w-12 h-12 rounded-full bg-neutral-900 text-white font-serif flex items-center justify-center text-lg font-bold">
-                V
-              </div>
-              <div>
-                <h4 className="text-sm font-semibold text-neutral-900">Julian Von Bern & Kiyomi Takahashi</h4>
-                <p className="text-xs text-neutral-500 font-mono">Co-Founders, Voyagera Private Sanctuaries</p>
-              </div>
+            <div className="pt-4 border-t border-stone-200/80 flex items-center gap-2 text-xs font-medium text-amber-900">
+              <CheckCircleIcon size={16} className="text-amber-600" />
+              <span>{activeTimelineItem.metrics}</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ========================================================================= */}
-      {/* 4. IMPACT & CONSERVATION STATS (LIGHT THEME) */}
-      {/* ========================================================================= */}
-      <section className="py-16 px-6 max-w-7xl mx-auto">
-        <div className="bg-white rounded-3xl p-8 sm:p-12 border border-neutral-200 shadow-md grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          
-          <div className="lg:col-span-6 space-y-4">
-            <span className="text-xs font-semibold uppercase tracking-widest text-emerald-700 flex items-center gap-1.5">
-              <ShieldCheckIcon size={16} /> 100% Zero-Footprint Guarantee
-            </span>
+      {/* 
+        ========================================================================
+        5. CONSERVATION & CARBON OFFSET SECTION (PREMIUM LIGHT ECO CARD)
+        ========================================================================
+      */}
+      <section className="max-w-7xl mx-auto px-6 py-16">
+        <div className="bg-gradient-to-br from-stone-900 via-stone-900 to-neutral-950 text-white rounded-3xl p-8 sm:p-14 shadow-2xl border border-stone-800 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative overflow-hidden">
+          {/* Subtle background ambient light */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/10 rounded-full filter blur-3xl pointer-events-none" />
+
+          <div className="lg:col-span-7 space-y-5 relative z-10">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-semibold uppercase tracking-widest">
+              <LeafIcon size={14} className="text-emerald-400" />
+              100% Zero-Footprint Guarantee
+            </div>
 
             <h2
-              className="text-3xl sm:text-4xl font-serif text-neutral-900"
+              className="text-3xl sm:text-5xl font-serif text-white leading-tight"
               style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
             >
-              Protecting the Landscapes We Inhabit
+              Protecting the Untouched Landscapes We Inhabit
             </h2>
 
-            <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed font-light">
-              Every private booking directly contributes 5% of net proceeds to local land trusts, forest regeneration in Kyoto, and glacial monitoring in Iceland. We ensure our journeys leave zero physical trace.
+            <p className="text-xs sm:text-sm text-stone-300 leading-relaxed font-sans font-light">
+              Every private booking directly contributes 5% of net proceeds to local land trusts, forest regeneration in Kyoto, and glacial monitoring in Iceland. We ensure our journeys leave zero physical trace and leave ecosystems stronger than we found them.
             </p>
+
+            <div className="pt-2 flex flex-wrap gap-4 text-xs text-stone-300">
+              <span className="flex items-center gap-1.5">
+                <CheckCircleIcon size={14} className="text-amber-400" /> 100% Solar-Powered Sanctuaries
+              </span>
+              <span className="flex items-center gap-1.5">
+                <CheckCircleIcon size={14} className="text-amber-400" /> Local Forest Restoration
+              </span>
+              <span className="flex items-center gap-1.5">
+                <CheckCircleIcon size={14} className="text-amber-400" /> Micro-Helicopter Offsets
+              </span>
+            </div>
           </div>
 
-          <div className="lg:col-span-6 grid grid-cols-2 sm:grid-cols-2 gap-4 text-center">
-            
-            <div className="p-6 bg-stone-50 rounded-2xl border border-stone-200 shadow-sm">
-              <span 
-                className="text-3xl sm:text-4xl font-serif text-amber-700 block mb-1" 
+          <div className="lg:col-span-5 grid grid-cols-2 gap-4 text-center relative z-10">
+            <div className="p-6 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:border-amber-400/50 transition-colors">
+              <span
+                className="text-3xl sm:text-4xl font-serif text-amber-300 block mb-1"
                 style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
               >
                 <AnimatedCounter
@@ -504,134 +614,122 @@ const AboutPage: React.FC = () => {
                   formatter={(val) => Math.floor(val).toLocaleString()}
                 />
               </span>
-              <span className="text-[11px] text-neutral-500 font-mono uppercase tracking-wider font-semibold">Trees Planted</span>
+              <span className="text-[11px] text-stone-400 font-sans uppercase tracking-wider">Trees Planted</span>
             </div>
 
-            <div className="p-6 bg-stone-50 rounded-2xl border border-stone-200 shadow-sm">
-              <span 
-                className="text-3xl sm:text-4xl font-serif text-emerald-700 block mb-1" 
+            <div className="p-6 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:border-amber-400/50 transition-colors">
+              <span
+                className="text-3xl sm:text-4xl font-serif text-amber-300 block mb-1"
                 style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
               >
                 <AnimatedCounter target={100} suffix="%" duration={2000} />
               </span>
-              <span className="text-[11px] text-neutral-500 font-mono uppercase tracking-wider font-semibold">Carbon Offset</span>
+              <span className="text-[11px] text-stone-400 font-sans uppercase tracking-wider">Carbon Offset</span>
             </div>
 
-            <div className="p-6 bg-stone-50 rounded-2xl border border-stone-200 shadow-sm">
-              <span 
-                className="text-3xl sm:text-4xl font-serif text-teal-700 block mb-1" 
+            <div className="p-6 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:border-amber-400/50 transition-colors">
+              <span
+                className="text-3xl sm:text-4xl font-serif text-amber-300 block mb-1"
                 style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
               >
-                <AnimatedCounter target={48} suffix="+" duration={2000} />
+                <AnimatedCounter target={4800} suffix=" ha" duration={2400} formatter={(val) => Math.floor(val).toLocaleString()} />
               </span>
-              <span className="text-[11px] text-neutral-500 font-mono uppercase tracking-wider font-semibold">Private Havens</span>
+              <span className="text-[11px] text-stone-400 font-sans uppercase tracking-wider">Land Protected</span>
             </div>
 
-            <div className="p-6 bg-stone-50 rounded-2xl border border-stone-200 shadow-sm">
-              <span 
-                className="text-3xl sm:text-4xl font-serif text-amber-800 block mb-1" 
+            <div className="p-6 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:border-amber-400/50 transition-colors">
+              <span
+                className="text-3xl sm:text-4xl font-serif text-amber-300 block mb-1"
                 style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
               >
-                <AnimatedCounter 
-                  target={2.4} 
-                  suffix="M+" 
-                  decimals={1}
-                  duration={2200} 
-                  formatter={(val) => `$${val.toFixed(1)}`}
-                />
+                5%
               </span>
-              <span className="text-[11px] text-neutral-500 font-mono uppercase tracking-wider font-semibold">Land Trust Fund</span>
+              <span className="text-[11px] text-stone-400 font-sans uppercase tracking-wider">Net Revenue Donated</span>
             </div>
-
           </div>
-
         </div>
       </section>
 
-      {/* ========================================================================= */}
-      {/* 5. VOYAGERA GENESIS TIMELINE (LIGHT THEME) */}
-      {/* ========================================================================= */}
-      <section className="py-16 px-6 max-w-7xl mx-auto border-t border-neutral-200/80">
-        <div className="text-center max-w-2xl mx-auto mb-16 space-y-2">
-          <span className="text-xs font-semibold uppercase tracking-widest text-neutral-500 font-mono">
-            Heritage & Evolution
-          </span>
-          <h2
-            className="text-4xl font-serif text-neutral-900"
-            style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
-          >
-            The Voyagera Genesis
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          {MILESTONES.map((m, idx) => (
-            <div 
-              key={idx} 
-              className="bg-white border border-neutral-200 p-6 rounded-2xl shadow-sm hover:shadow-md hover:border-amber-400/50 transition-all duration-300 relative"
-            >
-              <span className="text-2xl font-mono font-bold text-amber-700 block mb-2">
-                {m.year}
-              </span>
-              <h3 
-                className="text-xl font-serif text-neutral-900 mb-2"
-                style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
-              >
-                {m.title}
-              </h3>
-              <p className="text-xs text-neutral-600 leading-relaxed font-light">
-                {m.desc}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ========================================================================= */}
-      {/* 6. LEADERSHIP & CURATOR TEAM (LIGHT THEME) */}
-      {/* ========================================================================= */}
-      <section className="py-16 px-6 max-w-7xl mx-auto border-t border-neutral-200/80">
-        <div className="text-center max-w-2xl mx-auto mb-16 space-y-2">
-          <span className="text-xs font-semibold uppercase tracking-widest text-neutral-500 font-mono">
+      {/* 
+        ========================================================================
+        6. CURATORS & LEADERSHIP TEAM SECTION (WITH FILTER & MODAL)
+        ========================================================================
+      */}
+      <section className="max-w-7xl mx-auto px-6 py-16 sm:py-24">
+        <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
+          <span className="text-xs font-semibold uppercase tracking-widest text-amber-800">
             Our Concierge & Curators
           </span>
           <h2
-            className="text-4xl font-serif text-neutral-900"
+            className="text-4xl sm:text-5xl font-serif text-stone-900"
             style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
           >
-            Guided by Master Curators
+            Guided by Visionary Experts
           </h2>
+          <p className="text-sm sm:text-base text-stone-500 max-w-xl mx-auto leading-relaxed">
+            Our team brings together world-class architects, polar explorers, cultural historians, and Michelin-star alumni.
+          </p>
+
+          {/* Team Filter Pills */}
+          <div className="flex flex-wrap items-center justify-center gap-2 pt-6">
+            {(['All', 'Leadership', 'Expeditions', 'Culture'] as const).map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveTeamFilter(cat)}
+                className={`px-5 py-2 rounded-full text-xs font-medium transition-all duration-200 ${
+                  activeTeamFilter === cat
+                    ? 'bg-stone-900 text-white shadow-sm'
+                    : 'bg-white text-stone-600 border border-stone-200 hover:bg-stone-100'
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
         </div>
 
+        {/* Team Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {TEAM.map((member, idx) => (
+          {filteredTeam.map((member, idx) => (
             <div
               key={idx}
-              className="group bg-white border border-neutral-200/90 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:border-neutral-300 transition-all duration-500 flex flex-col justify-between"
+              onClick={() => setSelectedMember(member)}
+              className="group cursor-pointer bg-white border border-stone-200/80 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:border-amber-400/60 transition-all duration-300 flex flex-col justify-between"
             >
-              <div className="relative h-64 overflow-hidden bg-neutral-100">
+              <div className="relative h-72 overflow-hidden bg-stone-100">
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 filter contrast-[0.98]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/60 via-transparent to-transparent pointer-events-none" />
-              </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-stone-900/70 via-stone-900/10 to-transparent pointer-events-none" />
 
-              <div className="p-6 flex-1 flex flex-col justify-between text-center">
-                <div>
+                <div className="absolute bottom-4 left-4 right-4 text-white">
+                  <span className="inline-block px-2.5 py-0.5 rounded-full bg-amber-500/90 text-stone-950 text-[10px] font-bold uppercase tracking-wider mb-1">
+                    {member.category}
+                  </span>
                   <h3
-                    className="text-2xl font-serif text-neutral-900"
+                    className="text-2xl font-serif text-white"
                     style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
                   >
                     {member.name}
                   </h3>
-                  <span className="inline-block mt-1.5 px-3 py-0.5 rounded-full bg-amber-100 text-amber-800 text-[11px] font-mono font-medium tracking-wide border border-amber-200">
-                    {member.role}
-                  </span>
-                  <p className="text-xs text-neutral-500 leading-relaxed font-light mt-3">
+                </div>
+              </div>
+
+              <div className="p-6 flex-1 flex flex-col justify-between text-left space-y-4">
+                <div>
+                  <p className="text-xs font-semibold text-amber-800">{member.role}</p>
+                  <p className="text-xs text-stone-500 mt-2 line-clamp-2 leading-relaxed">
                     {member.bio}
                   </p>
+                </div>
+
+                <div className="pt-3 border-t border-stone-100 flex items-center justify-between text-xs font-semibold text-stone-900">
+                  <span className="text-stone-400 font-normal text-[11px]">{member.location}</span>
+                  <span className="text-amber-900 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+                    View Profile <ArrowRightIcon size={12} />
+                  </span>
                 </div>
               </div>
             </div>
@@ -639,37 +737,249 @@ const AboutPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ========================================================================= */}
-      {/* 7. MEMBER CALL TO ACTION BANNER (LIGHT THEME) */}
-      {/* ========================================================================= */}
-      <section className="py-20 px-6 max-w-5xl mx-auto text-center">
-        <div className="bg-gradient-to-r from-amber-500/10 via-amber-100/60 to-amber-500/10 border border-amber-300/60 p-10 sm:p-16 rounded-3xl backdrop-blur-xl shadow-lg space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white text-amber-800 text-xs font-mono font-semibold border border-amber-200 shadow-sm">
-            <AkkanamIcon size={14} /> Sanctuary Concierge Desk
+      {/* 
+        ========================================================================
+        7. PRESS ACCOLADES & VOYAGER REVIEWS (CAROUSEL / TABS)
+        ========================================================================
+      */}
+      <section className="max-w-5xl mx-auto px-6 py-16">
+        <div className="bg-stone-900 text-white rounded-3xl p-8 sm:p-14 shadow-2xl relative overflow-hidden">
+          <div className="text-center max-w-2xl mx-auto mb-8 space-y-2">
+            <span className="text-xs font-semibold uppercase tracking-widest text-amber-400">
+              International Recognition
+            </span>
+            <h2
+              className="text-3xl sm:text-4xl font-serif text-white"
+              style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
+            >
+              What the World Says
+            </h2>
           </div>
 
-          <h2
-            className="text-4xl sm:text-6xl font-serif text-neutral-900"
-            style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
-          >
-            Ready for Undisturbed Stillness?
-          </h2>
+          <div className="max-w-3xl mx-auto text-center space-y-6">
+            <div className="min-h-[120px] flex flex-col justify-center">
+              <p
+                className="text-xl sm:text-2xl font-serif text-stone-200 italic leading-relaxed"
+                style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
+              >
+                "{PRESS_QUOTES[activePress].quote}"
+              </p>
+              <div className="mt-4">
+                <span className="text-sm font-semibold text-amber-300 block">
+                  {PRESS_QUOTES[activePress].publication}
+                </span>
+                <span className="text-xs text-stone-400">{PRESS_QUOTES[activePress].author}</span>
+              </div>
+            </div>
 
-          <p className="text-sm sm:text-base text-neutral-700 max-w-xl mx-auto font-light">
-            Connect with our master curators to design your bespoke retreat across our 48 unlisted private sanctuaries.
-          </p>
-
-          <div className="pt-2 flex justify-center">
-            <a
-              href="mailto:concierge@voyagera-expeditions.com"
-              className="px-8 py-4 rounded-full bg-neutral-900 text-white font-bold text-sm hover:bg-neutral-800 transition-all duration-300 shadow-xl shadow-neutral-900/10"
-            >
-              Request Private Access
-            </a>
+            {/* Press Selector Dots */}
+            <div className="flex items-center justify-center gap-3 pt-4">
+              {PRESS_QUOTES.map((pq, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setActivePress(idx)}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    activePress === idx ? 'w-8 bg-amber-400' : 'w-2 bg-stone-700 hover:bg-stone-500'
+                  }`}
+                  aria-label={`Select quote from ${pq.publication}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
+      {/* 
+        ========================================================================
+        8. CALL TO ACTION BANNER (LIGHT THEME LUXURY)
+        ========================================================================
+      */}
+      <section className="max-w-7xl mx-auto px-6 py-16 sm:py-24">
+        <div className="bg-gradient-to-br from-amber-500/10 via-stone-100 to-amber-100/30 border border-amber-900/10 rounded-3xl p-8 sm:p-16 text-center space-y-6 shadow-xl relative overflow-hidden">
+          <div className="w-14 h-14 rounded-2xl bg-amber-600 text-white flex items-center justify-center mx-auto shadow-md">
+            <GlobeIcon size={28} />
+          </div>
+
+          <h2
+            className="text-3xl sm:text-5xl font-serif text-stone-900 max-w-2xl mx-auto leading-tight"
+            style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
+          >
+            Ready to Experience Undisturbed Solitude?
+          </h2>
+
+          <p className="text-sm sm:text-base text-stone-600 max-w-xl mx-auto leading-relaxed">
+            Our private concierges maintain unlisted keys to architectural havens, private islands, and high-altitude sanctuaries across the globe.
+          </p>
+
+          <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
+            <button
+              onClick={() => onNavigate && onNavigate('studio')}
+              className="px-8 py-4 rounded-full bg-stone-900 hover:bg-stone-800 text-white text-xs font-semibold uppercase tracking-wider transition-all duration-200 shadow-md hover:shadow-lg flex items-center gap-2"
+            >
+              <span>Explore Curated Sanctuaries</span>
+              <ArrowRightIcon size={16} />
+            </button>
+
+            <button
+              onClick={() => onNavigate && onNavigate('reachus')}
+              className="px-8 py-4 rounded-full bg-white hover:bg-stone-50 text-stone-900 border border-stone-300 text-xs font-semibold uppercase tracking-wider transition-all duration-200 shadow-sm"
+            >
+              Contact Private Concierge
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* 
+        ========================================================================
+        MODAL: TEAM MEMBER DETAIL MODAL
+        ========================================================================
+      */}
+      {selectedMember && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900/60 backdrop-blur-md animate-fade-in">
+          <div className="bg-white border border-stone-200 rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl relative animate-scale-up">
+            <button
+              onClick={() => setSelectedMember(null)}
+              className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-stone-900/80 text-white flex items-center justify-center hover:bg-stone-900 transition-colors"
+            >
+              <XIcon size={18} />
+            </button>
+
+            <div className="relative h-64 overflow-hidden bg-stone-100">
+              <img
+                src={selectedMember.image}
+                alt={selectedMember.name}
+                className="w-full h-full object-cover object-top"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-transparent to-transparent" />
+              <div className="absolute bottom-4 left-6 right-6 text-white">
+                <span className="px-2.5 py-0.5 rounded-full bg-amber-400 text-stone-950 text-[10px] font-bold uppercase tracking-wider">
+                  {selectedMember.category}
+                </span>
+                <h3
+                  className="text-3xl font-serif text-white mt-1"
+                  style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
+                >
+                  {selectedMember.name}
+                </h3>
+                <p className="text-xs text-amber-200">{selectedMember.role}</p>
+              </div>
+            </div>
+
+            <div className="p-6 sm:p-8 space-y-4 text-left">
+              <div>
+                <h4 className="text-xs font-semibold uppercase tracking-wider text-stone-400">Specialty</h4>
+                <p className="text-sm font-medium text-stone-800">{selectedMember.specialty}</p>
+              </div>
+
+              <div>
+                <h4 className="text-xs font-semibold uppercase tracking-wider text-stone-400">Biography</h4>
+                <p className="text-xs text-stone-600 leading-relaxed font-sans mt-1">
+                  {selectedMember.bio}
+                </p>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-amber-50/70 border border-amber-200/60">
+                <p
+                  className="text-sm font-serif text-stone-800 italic"
+                  style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
+                >
+                  "{selectedMember.quote}"
+                </p>
+              </div>
+
+              <div className="pt-2 flex items-center justify-between text-xs text-stone-500">
+                <span>Based in: {selectedMember.location}</span>
+                <button
+                  onClick={() => {
+                    setSelectedMember(null)
+                    if (onNavigate) onNavigate('reachus')
+                  }}
+                  className="text-amber-900 font-semibold underline"
+                >
+                  Consult Curator
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* 
+        ========================================================================
+        MODAL: PILLAR DETAIL MODAL
+        ========================================================================
+      */}
+      {selectedPillar && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900/60 backdrop-blur-md animate-fade-in">
+          <div className="bg-white border border-stone-200 rounded-3xl max-w-lg w-full p-8 shadow-2xl relative animate-scale-up text-left space-y-4">
+            <button
+              onClick={() => setSelectedPillar(null)}
+              className="absolute top-4 right-4 w-8 h-8 rounded-full bg-stone-100 text-stone-600 flex items-center justify-center hover:bg-stone-200 transition-colors"
+            >
+              <XIcon size={16} />
+            </button>
+
+            <div className="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-800 flex items-center justify-center mb-2">
+              <selectedPillar.icon size={26} />
+            </div>
+
+            <h3
+              className="text-3xl font-serif text-stone-900"
+              style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
+            >
+              {selectedPillar.title}
+            </h3>
+
+            <p className="text-xs font-semibold text-amber-800">{selectedPillar.subtitle}</p>
+
+            <p className="text-sm text-stone-600 leading-relaxed font-sans">
+              {selectedPillar.detail}
+            </p>
+
+            <div className="pt-4 border-t border-stone-100 flex items-center justify-end">
+              <button
+                onClick={() => setSelectedPillar(null)}
+                className="px-6 py-2.5 rounded-full bg-stone-900 text-white text-xs font-semibold uppercase tracking-wider"
+              >
+                Close Pillar
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* 
+        ========================================================================
+        MODAL: BRAND FILM VIDEO PREVIEW MODAL
+        ========================================================================
+      */}
+      {videoModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-950/80 backdrop-blur-md animate-fade-in">
+          <div className="bg-stone-900 border border-stone-800 rounded-3xl max-w-3xl w-full overflow-hidden shadow-2xl relative animate-scale-up">
+            <div className="p-4 border-b border-stone-800 flex items-center justify-between text-white">
+              <span className="text-xs font-semibold uppercase tracking-widest text-amber-400 flex items-center gap-2">
+                <SparklesIcon size={14} /> Voyagera Brand Sanctuary Film
+              </span>
+              <button
+                onClick={() => setVideoModalOpen(false)}
+                className="w-8 h-8 rounded-full bg-stone-800 text-stone-300 flex items-center justify-center hover:bg-stone-700"
+              >
+                <XIcon size={16} />
+              </button>
+            </div>
+
+            <div className="relative aspect-video bg-black flex items-center justify-center">
+              <video
+                className="w-full h-full object-cover"
+                autoPlay
+                controls
+                src="https://assets.mixkit.co/videos/preview/mixkit-serene-view-of-a-mountain-lake-at-sunset-41484-large.mp4"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

@@ -82,7 +82,7 @@ const App: React.FC = () => {
 
       {activePage === 'about' && (
         <main className="relative z-10">
-          <AboutPage />
+          <AboutPage onNavigate={handleNavigate} />
         </main>
       )}
 
