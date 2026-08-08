@@ -237,7 +237,32 @@ interface AboutPageProps {
   onNavigate?: (page: PageId) => void
 }
 
+const HERO_SANCTUARIES = [
+  {
+    id: 'alpine',
+    title: 'Engadin Alpine Haven',
+    location: 'Swiss Alps • 2,100m Altitude',
+    image: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2000&auto=format&fit=crop',
+    tag: 'Architectural Sanctuary',
+  },
+  {
+    id: 'kyoto',
+    title: 'Arashiyama Zen Estate',
+    location: 'Kyoto, Japan • Bamboo Groves',
+    image: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?q=80&w=2000&auto=format&fit=crop',
+    tag: 'Historic Heritage',
+  },
+  {
+    id: 'fjord',
+    title: 'Reykjavik Glass Lodge',
+    location: 'Iceland • Glacial Fjord',
+    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2000&auto=format&fit=crop',
+    tag: 'Wilderness Solitude',
+  },
+]
+
 const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
+  const [heroBgIndex, setHeroBgIndex] = useState(0)
   const [activeYear, setActiveYear] = useState('2025')
   const [activeTeamFilter, setActiveTeamFilter] = useState<'All' | 'Leadership' | 'Expeditions' | 'Culture'>('All')
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null)
@@ -245,6 +270,8 @@ const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
   const [activePress, setActivePress] = useState(0)
   const [showFullLetter, setShowFullLetter] = useState(false)
   const [videoModalOpen, setVideoModalOpen] = useState(false)
+
+  const currentHeroSanctuary = HERO_SANCTUARIES[heroBgIndex]
 
   const filteredTeam =
     activeTeamFilter === 'All'
@@ -257,118 +284,195 @@ const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
     <div className="bg-stone-50/40 text-stone-900 min-h-screen animate-fade-rise selection:bg-amber-100 selection:text-amber-900">
       {/* 
         ========================================================================
-        1. INNER PAGE HERO SECTION WITH BACKGROUND IMAGE (LIGHT THEME)
+        1. REDESIGNED INNER PAGE HERO SECTION WITH BG IMAGE SWITCHER (LIGHT THEME)
         ========================================================================
       */}
-      <section className="relative pt-28 pb-20 sm:pt-36 sm:pb-28 overflow-hidden">
-        {/* Background Image with Light Glass Overlay */}
-        <div className="absolute inset-0 z-0">
+      <section className="relative pt-28 pb-16 sm:pt-36 sm:pb-24 overflow-hidden min-h-[90vh] flex flex-col justify-between">
+        {/* Dynamic Background Image with Smooth Light Gradient Overlay */}
+        <div className="absolute inset-0 z-0 transition-opacity duration-1000">
           <img
-            src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2000&auto=format&fit=crop"
-            alt="Voyagera Sanctuary Background"
-            className="w-full h-full object-cover object-center scale-105 filter brightness-105 contrast-95"
+            key={currentHeroSanctuary.id}
+            src={currentHeroSanctuary.image}
+            alt={currentHeroSanctuary.title}
+            className="w-full h-full object-cover object-center filter brightness-105 contrast-[0.96] transition-all duration-1000 scale-105"
           />
-          {/* Light-theme Gradients & Frosted Overlays */}
-          <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/80 to-stone-50/95" />
+          {/* Light Theme Atmospheric Gradients */}
+          <div className="absolute inset-0 bg-gradient-to-r from-stone-50/95 via-stone-50/85 to-stone-50/40" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-transparent to-stone-50" />
           <div className="absolute inset-0 bg-radial-at-c from-amber-50/30 via-transparent to-transparent pointer-events-none" />
-          {/* Subtle grid pattern overlay */}
+
+          {/* Subtle Grid Lines Overlay */}
           <div
-            className="absolute inset-0 opacity-[0.03] pointer-events-none"
+            className="absolute inset-0 opacity-[0.04] pointer-events-none"
             style={{
               backgroundImage: `radial-gradient(#1c1917 1px, transparent 1px)`,
-              backgroundSize: '32px 32px',
+              backgroundSize: '36px 36px',
             }}
           />
         </div>
 
-        {/* Hero Content Container */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6">
+        {/* Main Hero Container */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full my-auto">
           {/* Breadcrumb Navigation */}
-          <div className="flex items-center justify-center gap-2 text-xs uppercase tracking-widest text-stone-500 font-medium mb-6">
+          <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-stone-500 font-medium mb-8">
             <span
               onClick={() => onNavigate && onNavigate('home')}
               className="hover:text-amber-800 cursor-pointer transition-colors"
             >
               Home
             </span>
-            <span>/</span>
+            <span className="text-stone-300">•</span>
             <span className="text-amber-900 font-semibold">About Voyagera</span>
           </div>
 
-          {/* Hero Card Container - Frosted Glass Light Box */}
-          <div className="max-w-4xl mx-auto text-center backdrop-blur-xl bg-white/70 border border-white/90 p-8 sm:p-14 rounded-3xl shadow-2xl shadow-stone-300/40">
-            {/* Top Pill Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-800 text-xs font-semibold uppercase tracking-widest mb-6">
-              <SparklesIcon size={14} className="text-amber-600 animate-pulse" />
-              The Voyagera Genesis & Philosophy
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            {/* Left Editorial Content */}
+            <div className="lg:col-span-7 space-y-6 text-left">
+              {/* Glowing Status Pill */}
+              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-stone-200/90 shadow-sm text-stone-800 text-xs font-medium">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-600"></span>
+                </span>
+                <span className="font-semibold uppercase tracking-wider text-[11px] text-amber-900">
+                  The Voyagera Genesis & Story
+                </span>
+              </div>
+
+              {/* Display Headline */}
+              <h1
+                className="text-4xl sm:text-6xl lg:text-7xl font-serif text-stone-900 leading-[1.06] tracking-tight"
+                style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
+              >
+                Where Pure Architecture Meets Undisturbed Solitude
+              </h1>
+
+              {/* Subtitle Paragraph */}
+              <p className="text-base sm:text-lg text-stone-600 max-w-2xl leading-relaxed font-sans font-light">
+                Founded on the belief that true luxury is not performative noise, but the rare privilege of undisturbed stillness, pristine nature, and deep architectural harmony.
+              </p>
+
+              {/* CTA Action Buttons */}
+              <div className="flex flex-wrap items-center gap-4 pt-2">
+                <button
+                  onClick={() => {
+                    const elem = document.getElementById('founder-letter')
+                    elem?.scrollIntoView({ behavior: 'smooth' })
+                  }}
+                  className="px-8 py-4 rounded-full bg-stone-900 hover:bg-stone-800 text-white text-xs font-semibold uppercase tracking-wider transition-all duration-200 shadow-lg hover:shadow-xl flex items-center gap-2.5 group"
+                >
+                  <span>Explore Heritage Story</span>
+                  <ArrowRightIcon size={16} className="group-hover:translate-x-1 transition-transform" />
+                </button>
+
+                <button
+                  onClick={() => setVideoModalOpen(true)}
+                  className="px-7 py-4 rounded-full bg-white/90 hover:bg-white text-stone-800 border border-stone-300 text-xs font-semibold uppercase tracking-wider transition-all duration-200 shadow-md hover:shadow-lg flex items-center gap-3"
+                >
+                  <div className="w-6 h-6 rounded-full bg-amber-600 text-white flex items-center justify-center text-xs shadow-sm animate-pulse">
+                    ▶
+                  </div>
+                  <span>Watch Brand Film</span>
+                </button>
+              </div>
             </div>
 
-            {/* Main Headline */}
-            <h1
-              className="text-4xl sm:text-6xl lg:text-7xl font-serif text-stone-900 leading-[1.08] tracking-tight"
-              style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
-            >
-              Crafting Architectural Havens for the Thoughtful Soul
-            </h1>
-
-            {/* Subtitle */}
-            <p className="text-base sm:text-lg text-stone-600 max-w-2xl mx-auto mt-6 leading-relaxed font-sans font-light">
-              Founded on the principle that true luxury is not performative noise, but undisturbed stillness, untouched wilderness, and deep architectural harmony.
-            </p>
-
-            {/* Action Buttons */}
-            <div className="flex flex-wrap items-center justify-center gap-4 mt-9">
-              <button
-                onClick={() => {
-                  const elem = document.getElementById('founder-letter')
-                  elem?.scrollIntoView({ behavior: 'smooth' })
-                }}
-                className="px-7 py-3.5 rounded-full bg-stone-900 hover:bg-stone-800 text-white text-xs font-semibold uppercase tracking-wider transition-all duration-200 shadow-md hover:shadow-lg flex items-center gap-2 group"
-              >
-                <span>Read Our Heritage Story</span>
-                <ArrowRightIcon size={15} className="group-hover:translate-x-1 transition-transform" />
-              </button>
-
-              <button
-                onClick={() => setVideoModalOpen(true)}
-                className="px-6 py-3.5 rounded-full bg-white/90 hover:bg-white text-stone-800 border border-stone-200 text-xs font-semibold uppercase tracking-wider transition-all duration-200 shadow-sm hover:shadow-md flex items-center gap-2.5"
-              >
-                <div className="w-5 h-5 rounded-full bg-amber-600 text-white flex items-center justify-center text-[10px]">
-                  ▶
+            {/* Right Interactive Glass Viewfinder Card */}
+            <div className="lg:col-span-5">
+              <div className="backdrop-blur-xl bg-white/75 border border-white/90 p-6 sm:p-8 rounded-3xl shadow-2xl shadow-stone-300/50 space-y-6 relative overflow-hidden">
+                <div className="flex items-center justify-between">
+                  <span className="text-[11px] font-semibold uppercase tracking-wider text-amber-900 flex items-center gap-1.5">
+                    <SparklesIcon size={14} className="text-amber-600" /> Sanctuary Viewfinder
+                  </span>
+                  <span className="px-2.5 py-0.5 rounded-full bg-amber-500/10 text-amber-800 text-[10px] font-bold uppercase tracking-wider">
+                    {currentHeroSanctuary.tag}
+                  </span>
                 </div>
-                <span>Watch Brand Film</span>
-              </button>
+
+                {/* Sanctuary Preview Thumb Card */}
+                <div className="relative h-44 rounded-2xl overflow-hidden border border-stone-200/80 group">
+                  <img
+                    src={currentHeroSanctuary.image}
+                    alt={currentHeroSanctuary.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute bottom-3 left-4 right-4 text-white">
+                    <h4
+                      className="text-xl font-serif text-white"
+                      style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
+                    >
+                      {currentHeroSanctuary.title}
+                    </h4>
+                    <p className="text-xs text-amber-200/90 font-sans">{currentHeroSanctuary.location}</p>
+                  </div>
+                </div>
+
+                {/* Sanctuary Selector Switcher Pills */}
+                <div>
+                  <label className="text-[11px] font-semibold text-stone-400 uppercase tracking-wider block mb-2">
+                    Switch Sanctuary Mood:
+                  </label>
+                  <div className="grid grid-cols-3 gap-2">
+                    {HERO_SANCTUARIES.map((sanct, idx) => (
+                      <button
+                        key={sanct.id}
+                        onClick={() => setHeroBgIndex(idx)}
+                        className={`p-2 rounded-xl text-left transition-all duration-200 border text-xs ${
+                          heroBgIndex === idx
+                            ? 'bg-stone-900 text-white border-stone-900 shadow-md scale-[1.02]'
+                            : 'bg-stone-50 hover:bg-stone-100 text-stone-700 border-stone-200'
+                        }`}
+                      >
+                        <span className="block truncate font-medium text-[11px]">{sanct.title}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Micro Key Feature Badges */}
+                <div className="pt-3 border-t border-stone-200/70 flex items-center justify-between text-[11px] text-stone-500 font-medium">
+                  <span className="flex items-center gap-1">
+                    <ShieldCheckIcon size={13} className="text-amber-600" /> 100% Unlisted Access
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <LeafIcon size={13} className="text-emerald-600" /> Zero Trace
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Floating Bottom Metric Bar */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 mt-12 w-full">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 rounded-3xl backdrop-blur-xl bg-white/80 border border-white/90 shadow-xl shadow-stone-200/60">
+            <div className="p-3 text-center border-r border-stone-200/60 last:border-0">
+              <span className="text-2xl sm:text-3xl font-serif text-amber-900 block" style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}>
+                <AnimatedCounter target={24} suffix="+" duration={1800} />
+              </span>
+              <span className="text-[11px] text-stone-500 font-medium uppercase tracking-wider">Global Estates</span>
             </div>
 
-            {/* Floating Quick Key Stats Array */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-12 pt-10 border-t border-stone-200/80">
-              <div className="p-3 rounded-2xl bg-stone-50/60 border border-stone-200/60">
-                <span className="text-2xl sm:text-3xl font-serif text-amber-900 block" style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}>
-                  <AnimatedCounter target={24} suffix="+" duration={1800} />
-                </span>
-                <span className="text-[11px] text-stone-500 font-medium uppercase tracking-wider">Global Estates</span>
-              </div>
+            <div className="p-3 text-center border-r border-stone-200/60 last:border-0">
+              <span className="text-2xl sm:text-3xl font-serif text-amber-900 block" style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}>
+                <AnimatedCounter target={100} suffix="%" duration={1600} />
+              </span>
+              <span className="text-[11px] text-stone-500 font-medium uppercase tracking-wider">Carbon Neutral</span>
+            </div>
 
-              <div className="p-3 rounded-2xl bg-stone-50/60 border border-stone-200/60">
-                <span className="text-2xl sm:text-3xl font-serif text-amber-900 block" style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}>
-                  <AnimatedCounter target={100} suffix="%" duration={1600} />
-                </span>
-                <span className="text-[11px] text-stone-500 font-medium uppercase tracking-wider">Carbon Neutral</span>
-              </div>
+            <div className="p-3 text-center border-r border-stone-200/60 last:border-0">
+              <span className="text-2xl sm:text-3xl font-serif text-amber-900 block" style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}>
+                <AnimatedCounter target={99.4} suffix="%" decimals={1} duration={2000} />
+              </span>
+              <span className="text-[11px] text-stone-500 font-medium uppercase tracking-wider">Guest Rating</span>
+            </div>
 
-              <div className="p-3 rounded-2xl bg-stone-50/60 border border-stone-200/60">
-                <span className="text-2xl sm:text-3xl font-serif text-amber-900 block" style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}>
-                  <AnimatedCounter target={99.4} suffix="%" decimals={1} duration={2000} />
-                </span>
-                <span className="text-[11px] text-stone-500 font-medium uppercase tracking-wider">Guest Rating</span>
-              </div>
-
-              <div className="p-3 rounded-2xl bg-stone-50/60 border border-stone-200/60">
-                <span className="text-2xl sm:text-3xl font-serif text-amber-900 block" style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}>
-                  2022
-                </span>
-                <span className="text-[11px] text-stone-500 font-medium uppercase tracking-wider">Founded</span>
-              </div>
+            <div className="p-3 text-center">
+              <span className="text-2xl sm:text-3xl font-serif text-amber-900 block" style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}>
+                2022
+              </span>
+              <span className="text-[11px] text-stone-500 font-medium uppercase tracking-wider">Founded</span>
             </div>
           </div>
         </div>
