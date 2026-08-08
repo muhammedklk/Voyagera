@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
+import { PageId } from '../components/Navbar'
 import {
   SparklesIcon,
   QuoteIcon,
@@ -233,7 +234,7 @@ const PRESS_QUOTES = [
 ]
 
 interface AboutPageProps {
-  onNavigate?: (page: string) => void
+  onNavigate?: (page: PageId) => void
 }
 
 const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
