@@ -37,7 +37,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick }) => {
           color: '#FFFFFF',
           fontFamily: 'Inter, system-ui, sans-serif',
           textShadow:
-            '0 0 16px rgba(0, 0, 0, 0.9), 0 2px 6px rgba(0, 0, 0, 0.8), 0 0 24px rgba(0, 0, 0, 0.6)',
+            'rgb(0 0 0 / 41%) 0px 0px 16px, rgb(0 0 0 / 13%) 0px 2px 6px, rgb(0 0 0 / 42%) 0px 0px 24px',
         }}
       >
         Curating unlisted private residences, remote wilderness retreats, and bespoke expeditions across Kyoto, Amalfi, the Swiss Alps, and beyond. Step away from crowd noise into pure stillness.
