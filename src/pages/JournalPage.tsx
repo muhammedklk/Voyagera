@@ -222,7 +222,7 @@ const JournalPage: React.FC = () => {
                   "{readingArticle.excerpt}"
                 </p>
                 <cite className="text-xs text-neutral-400 font-mono block not-italic">
-                  — {readingArticle.author}, Voyagera Editorial Dispatch
+                  — {readingArticle.author}, Nādvora Editorial Dispatch
                 </cite>
               </blockquote>
 
@@ -266,7 +266,7 @@ const JournalPage: React.FC = () => {
                   </div>
                 </div>
                 <p className="text-xs text-neutral-500 leading-relaxed">
-                  Curating unlisted private residences and bespoke wilderness dispatches for Voyagera global members.
+                  Curating unlisted private residences and bespoke wilderness dispatches for Nādvora global members.
                 </p>
               </div>
 
@@ -318,7 +318,7 @@ const JournalPage: React.FC = () => {
             </button>
 
             <span className="text-xs text-neutral-400 font-mono">
-              Published by Voyagera Editorial • Zurich / Kyoto / New York
+              Published by Nādvora Editorial • Zurich / Kyoto / New York
             </span>
           </div>
         </div>
@@ -332,7 +332,7 @@ const JournalPage: React.FC = () => {
       {/* Header */}
       <section className="max-w-7xl mx-auto px-6 py-16 text-center">
         <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-neutral-100 text-neutral-800 text-xs font-semibold uppercase tracking-widest mb-4">
-          <SparklesIcon size={14} className="text-amber-600" /> Voyagera Print & Digital Journal
+          <SparklesIcon size={14} className="text-amber-600" /> Nādvora Print & Digital Journal
         </span>
         <h1
           className="text-5xl sm:text-7xl font-serif text-neutral-900 max-w-4xl mx-auto leading-[1.05]"

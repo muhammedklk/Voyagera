@@ -1,9 +1,9 @@
 {
-  "name": "voyagera-sanctuaries",
+  "name": "nadvora-sanctuaries",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://muhammedklk.github.io/Voyagera",
+  "homepage": "https://muhammedklk.github.io/Nadvora",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

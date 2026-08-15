@@ -27,7 +27,7 @@ const TESTIMONIALS = [
   {
     id: 3,
     quote:
-      'Watching the Northern Lights from a heated glass dome in the middle of Iceland lava fields was the most ethereal experience of our lives. Voyagera is in a class of its own.',
+      'Watching the Northern Lights from a heated glass dome in the middle of Iceland lava fields was the most ethereal experience of our lives. Nādvora is in a class of its own.',
     author: 'Dr. Sophia & Julian Thorne',
     role: 'Biomedical Researchers',
     avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=200&auto=format&fit=crop',
@@ -54,7 +54,7 @@ const TestimonialsSection: React.FC = () => {
             Reflections from Our Voyagers
           </h2>
           <p className="text-sm text-neutral-500">
-            Read authentic accounts from founders, creators, and leaders who trusted Voyagera with their sacred time.
+            Read authentic accounts from founders, creators, and leaders who trusted Nādvora with their sacred time.
           </p>
         </div>
 

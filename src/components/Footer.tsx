@@ -26,7 +26,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               className="font-serif text-4xl tracking-tight select-none inline-block text-neutral-900 hover:opacity-80 transition-opacity"
               style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
             >
-              Voyagera<sup className="text-xl align-super leading-none">®</sup>
+              Nādvora<sup className="text-xl align-super leading-none">®</sup>
             </a>
             <p className="text-xs sm:text-sm text-neutral-500 max-w-sm leading-relaxed">
               Curating unlisted private residences, remote wilderness retreats, and bespoke expeditions across Kyoto, Amalfi, the Swiss Alps, and beyond. Step away from crowd noise into pure stillness.
@@ -98,7 +98,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-400">
-          <p>© {new Date().getFullYear()} Voyagera Inc. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Nādvora Inc. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <a href="#" className="hover:text-neutral-900 transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-neutral-900 transition-colors">Terms of Service</a>

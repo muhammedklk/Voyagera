@@ -340,7 +340,7 @@ const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
 
               <div className="pt-4 border-t border-neutral-200 text-center space-y-1">
                 <span className="text-[11px] text-neutral-400 block">Strict Confidentiality & Discretion</span>
-                <span className="text-xs text-neutral-600 font-medium">Encrypted Direct Line: concierge@voyagera-expeditions.com</span>
+                <span className="text-xs text-neutral-600 font-medium">Encrypted Direct Line: concierge@nadvora-expeditions.com</span>
               </div>
             </div>
           </div>

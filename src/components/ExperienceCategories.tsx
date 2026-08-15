@@ -55,7 +55,7 @@ const ExperienceCategories: React.FC<ExperienceCategoriesProps> = ({ onExploreCl
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
             <span className="text-xs font-semibold uppercase tracking-widest text-neutral-400">
-              The Voyagera Experience
+              The Nādvora Experience
             </span>
             <h2
               className="text-4xl sm:text-6xl font-serif text-white mt-2"

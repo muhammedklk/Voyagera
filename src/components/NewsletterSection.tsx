@@ -39,7 +39,7 @@ const NewsletterSection: React.FC = () => {
             <div className="p-6 bg-white/10 border border-white/20 rounded-2xl max-w-md mx-auto animate-fade-rise backdrop-blur-md">
               <ShieldCheckIcon size={32} className="text-emerald-400 mx-auto mb-2" />
               <h4 className="text-lg font-serif text-white" style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}>
-                Welcome to Voyagera Circle
+                Welcome to Nādvora Circle
               </h4>
               <p className="text-xs text-neutral-300 mt-1">
                 A confirmation key has been dispatched to <span className="font-semibold text-white">{email}</span>.

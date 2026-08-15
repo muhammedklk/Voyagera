@@ -93,7 +93,7 @@ const AboutSection: React.FC = () => {
           </p>
 
           <p className="text-sm text-neutral-500 leading-relaxed">
-            Founded in 2022 by a collective of architects, naturalists, and hospitality pioneers, Voyagera operates as a private sanctuary club. We design bespoke, zero-footprint travel experiences that honor local heritage and leave the soul renewed.
+            Founded in 2022 by a collective of architects, naturalists, and hospitality pioneers, Nādvora operates as a private sanctuary club. We design bespoke, zero-footprint travel experiences that honor local heritage and leave the soul renewed.
           </p>
 
           {/* Core Guarantees */}
@@ -134,7 +134,7 @@ const AboutSection: React.FC = () => {
               <div className="bg-neutral-900 text-white p-6 rounded-3xl relative overflow-hidden">
                 <QuoteIcon size={32} className="text-neutral-700 absolute top-4 right-4 opacity-40" />
                 <p className="text-sm font-serif italic relative z-10 leading-relaxed text-neutral-200" style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}>
-                  "Voyagera reframed how our family experiences the world. Pure quietude, absolute luxury."
+                  "Nādvora reframed how our family experiences the world. Pure quietude, absolute luxury."
                 </p>
                 <span className="block mt-3 text-[11px] uppercase tracking-wider text-neutral-400 font-sans">
                   — H. V. K., Tech Founder

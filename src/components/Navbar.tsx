@@ -71,7 +71,7 @@ const Navbar: React.FC<NavbarProps> = ({ activePage = 'home', onNavigate }) => {
             className="font-serif text-3xl tracking-tight select-none text-neutral-900 hover:opacity-80 transition-opacity"
             style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
           >
-            Voyagera<sup className="text-lg align-super leading-none">®</sup>
+            Nādvora<sup className="text-lg align-super leading-none">®</sup>
           </a>
 
           {/* Desktop Menu Items */}
@@ -132,7 +132,7 @@ const Navbar: React.FC<NavbarProps> = ({ activePage = 'home', onNavigate }) => {
               className="font-serif text-3xl text-neutral-900"
               style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
             >
-              Voyagera<sup className="text-sm">®</sup>
+              Nādvora<sup className="text-sm">®</sup>
             </span>
             <button
               onClick={() => setMobileMenuOpen(false)}

@@ -18,7 +18,7 @@ const ChevronDown: React.FC<{ isOpen: boolean }> = ({ isOpen }) => (
 
 const FAQS = [
   {
-    question: 'How does Voyagera private sanctuary membership work?',
+    question: 'How does Nādvora private sanctuary membership work?',
     answer:
       'Membership is by invitation or application. Members receive exclusive access to unlisted private estates, dedicated 24/7 personal concierge team, and priority reservations across all global regions.',
   },
@@ -28,7 +28,7 @@ const FAQS = [
       'Yes. Every property in our portfolio is a privately owned architectural residence or custom-built eco-pavilion reserved exclusively for our guests during their stay.',
   },
   {
-    question: 'Can Voyagera arrange private flight charters and ground security?',
+    question: 'Can Nādvora arrange private flight charters and ground security?',
     answer:
       'Yes. Our global concierge coordinates custom long-range jet charters, helicopter transfers, and discreet executive protection whenever requested.',
   },
@@ -225,7 +225,7 @@ const ReachUsPage: React.FC = () => {
                 <ShieldCheckIcon size={16} className="text-emerald-600" /> Direct Concierge Line
               </h4>
               <p className="text-xs text-neutral-500">
-                Encrypted email: <span className="font-mono text-neutral-900 font-semibold">concierge@voyagera-expeditions.com</span>
+                Encrypted email: <span className="font-mono text-neutral-900 font-semibold">concierge@nadvora-expeditions.com</span>
               </p>
             </div>
           </div>
