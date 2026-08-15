@@ -213,7 +213,7 @@ const PILLARS = [
 const PRESS_QUOTES = [
   {
     publication: 'Architectural Digest',
-    quote: 'Nattuvazhi has quietly redefined what luxury means in the 21st century: pure stillness framed by extraordinary architecture.',
+    quote: 'Voyagera has quietly redefined what luxury means in the 21st century: pure stillness framed by extraordinary architecture.',
     author: 'Elena Rostova, Senior Editor',
   },
   {
@@ -223,7 +223,7 @@ const PRESS_QUOTES = [
   },
   {
     publication: 'Robb Report',
-    quote: 'For those who seek silence over spectacle, Nattuvazhi’s private sanctuaries offer an unparalleled retreat for the soul.',
+    quote: 'For those who seek silence over spectacle, Voyagera’s private sanctuaries offer an unparalleled retreat for the soul.',
     author: 'Jonathan Sterling, Luxury Travel Editor',
   },
   {
@@ -322,7 +322,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
               Home
             </span>
             <span className="text-stone-300">•</span>
-            <span className="text-amber-900 font-semibold">About Nattuvazhi</span>
+            <span className="text-amber-900 font-semibold">About Voyagera</span>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -335,7 +335,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-600"></span>
                 </span>
                 <span className="font-semibold uppercase tracking-wider text-[11px] text-amber-900">
-                  The Nattuvazhi Genesis & Story
+                  The Voyagera Genesis & Story
                 </span>
               </div>
 
@@ -497,12 +497,12 @@ const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
               className="text-3xl sm:text-4xl lg:text-5xl font-serif text-stone-900 leading-tight"
               style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
             >
-              "We created Nattuvazhi to be the anti-dote to noisy luxury."
+              "We created Voyagera to be the anti-dote to noisy luxury."
             </h2>
 
             <div className="space-y-4 text-stone-600 text-sm sm:text-base leading-relaxed font-sans font-light">
               <p>
-                When we launched Nattuvazhi in 2022, we observed a troubling trend in high-end travel: luxury had become performative. Five-star hotels felt crowded, itineraries felt scripted, and true solitude was almost impossible to purchase.
+                When we launched Voyagera in 2022, we observed a troubling trend in high-end travel: luxury had become performative. Five-star hotels felt crowded, itineraries felt scripted, and true solitude was almost impossible to purchase.
               </p>
 
               <p>
@@ -528,7 +528,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
                 </div>
                 <div>
                   <h4 className="text-base font-semibold text-stone-900 font-sans">Julian & Kiyomi</h4>
-                  <p className="text-xs text-stone-500 font-sans">Co-Founders, Nattuvazhi Private Sanctuaries</p>
+                  <p className="text-xs text-stone-500 font-sans">Co-Founders, Voyagera Private Sanctuaries</p>
                 </div>
               </div>
 
@@ -557,7 +557,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
             className="text-4xl sm:text-5xl font-serif text-stone-900"
             style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
           >
-            The Four Pillars of Nattuvazhi
+            The Four Pillars of Voyagera
           </h2>
           <p className="text-sm sm:text-base text-stone-500 max-w-xl mx-auto leading-relaxed">
             Every sanctuary and journey in our portfolio is benchmarked against four uncompromising principles.
@@ -615,7 +615,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
               className="text-3xl sm:text-4xl font-serif text-stone-900"
               style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
             >
-              The Evolution of Nattuvazhi
+              The Evolution of Voyagera
             </h2>
           </div>
 
@@ -1064,7 +1064,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
           <div className="bg-stone-900 border border-stone-800 rounded-3xl max-w-3xl w-full overflow-hidden shadow-2xl relative animate-scale-up">
             <div className="p-4 border-b border-stone-800 flex items-center justify-between text-white">
               <span className="text-xs font-semibold uppercase tracking-widest text-amber-400 flex items-center gap-2">
-                <SparklesIcon size={14} /> Nattuvazhi Brand Sanctuary Film
+                <SparklesIcon size={14} /> Voyagera Brand Sanctuary Film
               </span>
               <button
                 onClick={() => setVideoModalOpen(false)}

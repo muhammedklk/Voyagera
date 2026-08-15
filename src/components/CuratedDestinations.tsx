@@ -146,6 +146,22 @@ export const DESTINATIONS: Destination[] = [
     description:
       'A UNESCO Biosphere reserve overwater villa surrounded by crystal turquoise waters, manta rays, and private coral reefs untouched by crowds.',
   },
+  {
+    id: 'serengeti-safari',
+    title: 'Serengeti Migration Lodge',
+    subtitle: 'Untamed Savanna Luxury',
+    category: 'Mountain & Forest',
+    location: 'Serengeti, Tanzania',
+    rating: 4.99,
+    reviewsCount: 39,
+    price: '$2,250 / night',
+    image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?q=80&w=1200&auto=format&fit=crop',
+    duration: '6 - 12 Days',
+    highlights: ['Great Migration Hot Air Balloon Flight', 'Private Game Drive Wildlife Tracker', 'Savanna Sunset Infinity Pool', 'Boma Fire Pit Dinner'],
+    amenities: ['Infinity Pool', 'Game Drives', 'Savanna Deck', 'Fire Pit', 'Optics & Binoculars'],
+    description:
+      'Perched on high granite kopjes overlooking endless golden savannas, watch wild zebra and wildebeest migrations from your private luxury tented pavilion.',
+  },
 ]
 
 const CATEGORIES = ['All', 'Mountain & Forest', 'Coastal & Islands', 'Aurora & Glacier']
@@ -175,18 +191,18 @@ const CuratedDestinations: React.FC<CuratedDestinationsProps> = ({ onSelectDesti
   }
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-24 border-t border-[#EADFCF]">
+    <section className="max-w-7xl mx-auto px-6 py-24 border-t border-neutral-100">
       {/* Section Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
         <div>
-          <span className="text-xs font-semibold uppercase tracking-widest text-[#C85A32]">
-            Handpicked Nadan Sanctuaries
+          <span className="text-xs font-semibold uppercase tracking-widest text-neutral-400">
+            Handpicked World Sanctuaries
           </span>
           <h2
-            className="text-4xl sm:text-5xl font-serif text-[#1B3B2B] mt-2"
+            className="text-4xl sm:text-5xl font-serif text-neutral-900 mt-2"
             style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
           >
-            Curated Native Havens & Retreats
+            Curated Sanctuaries & Havens
           </h2>
         </div>
 
@@ -196,10 +212,10 @@ const CuratedDestinations: React.FC<CuratedDestinationsProps> = ({ onSelectDesti
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-2 rounded-full text-xs font-semibold transition-all duration-200 ${
+              className={`px-4 py-2 rounded-full text-xs font-medium transition-all duration-200 ${
                 activeCategory === cat
-                  ? 'bg-[#1B3B2B] text-white shadow-md'
-                  : 'bg-[#F5F0E6] text-[#4A4744] hover:bg-[#EADFCF] border border-[#EADFCF]'
+                  ? 'bg-neutral-900 text-white shadow-md'
+                  : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200'
               }`}
             >
               {cat}
@@ -214,10 +230,10 @@ const CuratedDestinations: React.FC<CuratedDestinationsProps> = ({ onSelectDesti
           <div
             key={item.id}
             onClick={() => handleCardClick(item)}
-            className="group relative bg-[#FDFBF7] border border-[#EADFCF] rounded-3xl overflow-hidden hover:shadow-xl hover:border-[#C85A32]/50 transition-all duration-300 cursor-pointer flex flex-col justify-between"
+            className="group relative bg-white border border-neutral-200/80 rounded-3xl overflow-hidden hover:shadow-md hover:border-neutral-300 transition-all duration-300 cursor-pointer flex flex-col justify-between"
           >
             {/* Image Container */}
-            <div className="relative h-72 w-full overflow-hidden bg-[#F5F0E6]">
+            <div className="relative h-72 w-full overflow-hidden bg-neutral-100">
               <img
                 src={item.image}
                 alt={item.title}
@@ -227,30 +243,30 @@ const CuratedDestinations: React.FC<CuratedDestinationsProps> = ({ onSelectDesti
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
 
               {/* Location Badge */}
-              <div className="absolute top-4 left-4 px-3.5 py-1 rounded-full bg-[#FDFBF7]/90 backdrop-blur-md text-[#1B3B2B] text-xs font-semibold flex items-center gap-1.5 shadow-sm border border-[#EADFCF]">
-                <MapPinIcon size={12} className="text-[#C85A32]" />
+              <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-neutral-900 text-xs font-medium flex items-center gap-1.5 shadow-sm">
+                <MapPinIcon size={12} className="text-neutral-700" />
                 {item.location}
               </div>
 
               {/* Like Button */}
               <button
                 onClick={(e) => toggleLike(item.id, e)}
-                className="absolute top-4 right-4 w-9 h-9 rounded-full bg-[#FDFBF7]/85 backdrop-blur-md flex items-center justify-center text-[#1B3B2B] hover:bg-white transition-all shadow-sm border border-[#EADFCF]"
+                className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-neutral-800 hover:bg-white transition-all shadow-sm"
                 aria-label="Save retreat"
               >
                 <HeartIcon
                   size={16}
-                  className={likedIds[item.id] ? 'fill-[#C85A32] text-[#C85A32]' : 'text-[#4A4744]'}
+                  className={likedIds[item.id] ? 'fill-red-500 text-red-500' : 'text-neutral-700'}
                 />
               </button>
 
               {/* Price & Rating Overlay at Bottom of Image */}
               <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white">
-                <span className="text-xs font-semibold tracking-wider uppercase bg-[#1B3B2B]/75 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
+                <span className="text-xs font-semibold tracking-wider uppercase bg-black/40 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
                   {item.duration}
                 </span>
-                <div className="flex items-center gap-1 bg-[#1B3B2B]/75 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/20 text-xs font-medium">
-                  <StarIcon size={12} className="text-[#D4AF37]" />
+                <div className="flex items-center gap-1 bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/20 text-xs font-medium">
+                  <StarIcon size={12} className="text-amber-400" />
                   <span>{item.rating}</span>
                   <span className="text-white/70">({item.reviewsCount})</span>
                 </div>
@@ -260,29 +276,29 @@ const CuratedDestinations: React.FC<CuratedDestinationsProps> = ({ onSelectDesti
             {/* Card Details */}
             <div className="p-6 flex-1 flex flex-col justify-between">
               <div>
-                <span className="text-xs font-semibold text-[#C85A32] uppercase tracking-widest">
+                <span className="text-xs font-medium text-neutral-400 uppercase tracking-widest">
                   {item.subtitle}
                 </span>
                 <h3
-                  className="text-2xl font-serif text-[#1B3B2B] mt-1 mb-2 group-hover:text-[#C85A32] transition-colors"
+                  className="text-2xl font-serif text-neutral-900 mt-1 mb-2 group-hover:text-neutral-600 transition-colors"
                   style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
                 >
                   {item.title}
                 </h3>
-                <p className="text-xs text-[#4A4744] line-clamp-2 leading-relaxed mb-4">
+                <p className="text-xs text-neutral-500 line-clamp-2 leading-relaxed mb-4">
                   {item.description}
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-[#EADFCF] flex items-center justify-between">
+              <div className="pt-4 border-t border-neutral-100 flex items-center justify-between">
                 <div>
-                  <span className="text-[10px] text-[#4A4744] uppercase tracking-wider block">Starting at</span>
-                  <span className="text-base font-bold text-[#1B3B2B]">{item.price}</span>
+                  <span className="text-[10px] text-neutral-400 uppercase tracking-wider block">Starting at</span>
+                  <span className="text-base font-semibold text-neutral-900">{item.price}</span>
                 </div>
                 <button
                   type="button"
                   onClick={() => handleCardClick(item)}
-                  className="px-4 py-2 rounded-full bg-[#F5F0E6] group-hover:bg-[#1B3B2B] group-hover:text-white text-xs font-semibold flex items-center gap-1 transition-all duration-300 border border-[#EADFCF]"
+                  className="px-4 py-2 rounded-full bg-neutral-100 group-hover:bg-neutral-900 group-hover:text-white text-xs font-semibold flex items-center gap-1 transition-all duration-300"
                 >
                   <span>Explore Haven</span>
                   <ArrowRightIcon size={14} />

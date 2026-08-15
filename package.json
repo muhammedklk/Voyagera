@@ -1,9 +1,9 @@
 {
-  "name": "nattuvazhi-sanctuaries",
+  "name": "voyagera-sanctuaries",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://muhammedklk.github.io/Nattuvazhi",
+  "homepage": "https://muhammedklk.github.io/Voyagera",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

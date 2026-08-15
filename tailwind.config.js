@@ -9,22 +9,9 @@ export default {
       fontFamily: {
         serif: ['"Instrument Serif"', 'Georgia', 'serif'],
         sans: ['Inter', 'system-ui', 'sans-serif'],
-        outfit: ['Outfit', 'sans-serif'],
       },
       colors: {
-        background: '#FDFBF7',
-        nadan: {
-          terracotta: '#C85A32',
-          'terracotta-dark': '#A64320',
-          emerald: '#1B3B2B',
-          'emerald-dark': '#12291E',
-          cream: '#FDFBF7',
-          card: '#F5F0E6',
-          gold: '#D4AF37',
-          amber: '#C59B27',
-          charcoal: '#1A1918',
-          sand: '#EADFCF',
-        },
+        background: '#FFFFFF',
       },
       animation: {
         'fade-rise': 'fadeRise 0.8s ease-out forwards',

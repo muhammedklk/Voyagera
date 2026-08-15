@@ -59,7 +59,7 @@ const Navbar: React.FC<NavbarProps> = ({ activePage = 'home', onNavigate }) => {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${
           scrolled
-            ? 'bg-[#FDFBF7]/95 backdrop-blur-md border-b border-[#EADFCF] shadow-sm py-0'
+            ? 'bg-white/90 backdrop-blur-md border-b border-neutral-200/60 shadow-sm py-0'
             : 'bg-transparent border-b border-transparent py-1'
         }`}
       >
@@ -68,11 +68,10 @@ const Navbar: React.FC<NavbarProps> = ({ activePage = 'home', onNavigate }) => {
           <a
             href="/"
             onClick={(e) => handleNavClick('home', e)}
-            className="font-serif text-3xl tracking-tight select-none text-[#1B3B2B] hover:text-[#C85A32] transition-colors flex items-center gap-1.5"
+            className="font-serif text-3xl tracking-tight select-none text-neutral-900 hover:opacity-80 transition-opacity"
             style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
           >
-            <span className="inline-block w-2.5 h-2.5 rounded-full bg-[#C85A32]"></span>
-            <span>Nattuvazhi</span><sup className="text-sm font-normal text-[#C85A32] align-super leading-none">®</sup>
+            Voyagera<sup className="text-lg align-super leading-none">®</sup>
           </a>
 
           {/* Desktop Menu Items */}
@@ -82,11 +81,11 @@ const Navbar: React.FC<NavbarProps> = ({ activePage = 'home', onNavigate }) => {
                 <a
                   href={`#${item.page}`}
                   onClick={(e) => handleNavClick(item.page, e)}
-                  className="text-sm transition-colors duration-200 hover:text-[#C85A32] font-medium"
+                  className="text-sm transition-colors duration-200 hover:opacity-80 font-medium"
                   style={{
-                    color: activePage === item.page ? '#1B3B2B' : '#4A4744',
+                    color: activePage === item.page ? '#000000' : '#444444',
                     fontFamily: 'Inter, system-ui, sans-serif',
-                    borderBottom: activePage === item.page ? '2px solid #C85A32' : 'none',
+                    borderBottom: activePage === item.page ? '2px solid #000000' : 'none',
                     paddingBottom: '4px',
                   }}
                 >
@@ -100,45 +99,44 @@ const Navbar: React.FC<NavbarProps> = ({ activePage = 'home', onNavigate }) => {
           <button
             id="nav-cta-begin-journey"
             onClick={(e) => handleNavClick('reachus', e)}
-            className="hidden md:inline-flex items-center justify-center rounded-full px-6 py-2.5 text-sm font-medium transition-all duration-200 hover:scale-[1.03] active:scale-[0.98] shadow-md hover:shadow-lg"
+            className="hidden md:inline-flex items-center justify-center rounded-full px-6 py-2.5 text-sm font-medium transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98] shadow-sm"
             style={{
-              backgroundColor: '#1B3B2B',
+              backgroundColor: '#000000',
               color: '#FFFFFF',
               fontFamily: 'Inter, system-ui, sans-serif',
             }}
           >
-            Explore Sanctuaries
+            Begin Journey
           </button>
 
           {/* Mobile Hamburger Button */}
           <button
             id="nav-mobile-menu"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden flex flex-col gap-1.5 p-2 text-[#1B3B2B] focus:outline-none"
+            className="md:hidden flex flex-col gap-1.5 p-2 text-neutral-900 focus:outline-none"
             aria-label="Toggle menu"
           >
-            <span className="block w-6 h-0.5 bg-[#1B3B2B]" />
-            <span className="block w-6 h-0.5 bg-[#1B3B2B]" />
-            <span className="block w-4 h-0.5 bg-[#C85A32]" />
+            <span className="block w-6 h-0.5 bg-black" />
+            <span className="block w-6 h-0.5 bg-black" />
+            <span className="block w-4 h-0.5 bg-black" />
           </button>
         </div>
       </nav>
 
       {/* Full-Screen & Full-Width Solid Mobile Overlay Menu (z-[100] to cover ALL sections 100%) */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 z-[100] w-full h-full min-h-screen bg-[#FDFBF7] text-[#1A1918] flex flex-col justify-between p-6 sm:p-8 animate-fade-rise overflow-y-auto">
+        <div className="md:hidden fixed inset-0 z-[100] w-full h-full min-h-screen bg-white text-neutral-900 flex flex-col justify-between p-6 sm:p-8 animate-fade-rise overflow-y-auto">
           {/* Header Bar inside Mobile Menu */}
-          <div className="flex items-center justify-between pb-6 border-b border-[#EADFCF] shrink-0">
+          <div className="flex items-center justify-between pb-6 border-b border-neutral-200 shrink-0">
             <span
-              className="font-serif text-3xl text-[#1B3B2B] flex items-center gap-1.5"
+              className="font-serif text-3xl text-neutral-900"
               style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
             >
-              <span className="inline-block w-2.5 h-2.5 rounded-full bg-[#C85A32]"></span>
-              Nattuvazhi<sup className="text-sm font-normal text-[#C85A32]">®</sup>
+              Voyagera<sup className="text-sm">®</sup>
             </span>
             <button
               onClick={() => setMobileMenuOpen(false)}
-              className="w-10 h-10 rounded-full bg-[#F5F0E6] hover:bg-[#EADFCF] text-[#1B3B2B] flex items-center justify-center transition-colors focus:outline-none"
+              className="w-10 h-10 rounded-full bg-neutral-100 hover:bg-neutral-200 text-neutral-900 flex items-center justify-center transition-colors focus:outline-none"
               aria-label="Close menu"
             >
               <XIcon size={20} />
@@ -155,8 +153,8 @@ const Navbar: React.FC<NavbarProps> = ({ activePage = 'home', onNavigate }) => {
                     onClick={(e) => handleNavClick(item.page, e)}
                     className={`text-4xl sm:text-5xl font-serif inline-block text-center transition-all ${
                       activePage === item.page
-                        ? 'text-[#1B3B2B] font-bold border-b-2 border-[#C85A32] pb-1'
-                        : 'text-[#4A4744]/70 hover:text-[#C85A32]'
+                        ? 'text-neutral-900 font-bold border-b-2 border-neutral-900 pb-1'
+                        : 'text-neutral-400 hover:text-neutral-900'
                     }`}
                     style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
                   >
@@ -168,17 +166,17 @@ const Navbar: React.FC<NavbarProps> = ({ activePage = 'home', onNavigate }) => {
           </div>
 
           {/* Bottom Action Footer inside Mobile Menu */}
-          <div className="pt-6 border-t border-[#EADFCF] space-y-4 shrink-0">
+          <div className="pt-6 border-t border-neutral-200 space-y-4 shrink-0">
             <button
               onClick={(e) => handleNavClick('reachus', e)}
-              className="w-full py-4 bg-[#1B3B2B] hover:bg-[#12291E] text-white text-base font-medium rounded-full shadow-lg transition-transform active:scale-[0.98]"
+              className="w-full py-4 bg-neutral-900 hover:bg-neutral-800 text-white text-base font-medium rounded-full shadow-lg transition-transform active:scale-[0.98]"
               style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
             >
-              Explore Sanctuaries
+              Begin Journey
             </button>
 
-            <div className="text-center text-xs text-[#C85A32] font-sans font-medium tracking-wide">
-              <span>Zurich • Kyoto • Tokyo • Amalfi • New York</span>
+            <div className="text-center text-xs text-neutral-400 font-sans">
+              <span>Zurich • Kyoto • New York</span>
             </div>
           </div>
         </div>
