@@ -4,39 +4,39 @@ import { CompassIcon, SparklesIcon, ShieldCheckIcon, GlobeIcon, ArrowRightIcon }
 const PILLARS = [
   {
     number: '01',
-    title: 'Backwater Slow Cruises',
+    title: 'Private Expeditions',
     description:
-      'Glide quietly through palm-fringed channels on solar-assisted kettuvallams with private naturalists and native chefs.',
-    tag: 'Lagoons & Quiet Waters',
+      'Uncharted paths guided by polar explorers and local naturalists. Yacht charters across Chilean fjords and remote volcanic peaks.',
+    tag: 'Wilderness & Stars',
     icon: CompassIcon,
-    features: ['Solar Kettuvallam Charters', 'Toddy Palm Sunset Expeditions', 'Private Seafood & Sadya Chefs'],
+    features: ['Custom Flight Charters', '1-on-1 Expeditions Guide', 'Zero-Footprint Camping'],
   },
   {
     number: '02',
-    title: 'Mist & Hill Estate Living',
+    title: 'Mindful Retreats',
     description:
-      'High-altitude cloud forest retreats nestled within historic tea gardens and cardamom estates in Anamudi hills.',
-    tag: 'Highland Solitude',
+      'Digital quietude designed for deep focus and physical renewal. Thermal springs, sound baths, and silence in pristine nature.',
+    tag: 'Restoration',
     icon: SparklesIcon,
-    features: ['Private Tea Harvesting', 'Mist Deck Fireplaces', 'Shola Waterfall Treks'],
+    features: ['Private Onsen & Spa', 'Personal Wellness Chef', 'Circadian Lighting Design'],
   },
   {
     number: '03',
-    title: 'Ayurvedic & Forest Healing',
+    title: 'Architectural Havens',
     description:
-      'Ancient botanical wellness regimens, herbal steam therapies, and natural mountain spring plunge baths in pure quietude.',
-    tag: 'Mindful Restoration',
-    icon: SparklesIcon,
-    features: ['Custom Botanical Therapies', 'Herbal Spring Baths', 'Naturalist Guided Meditation'],
+      'Living in structural masterpieces. From brutalist coastal glass structures to 200-year-old restored Japanese cedar estates.',
+    tag: 'Living Art',
+    icon: ShieldCheckIcon,
+    features: ['Curated Art Collections', 'Acoustic Soundproofing', 'Private Infinity Edge Pools'],
   },
   {
     number: '04',
-    title: 'Heritage Illams & Spice Trails',
+    title: 'Cultural Immersions',
     description:
-      'Staying in restored 4-wing Nalukettu courtyards. Experience ancient woodwork craft and organic spice culinary journeys.',
+      'Private access to living legends — ancient ceramic masters, private vineyard cellars, and secret temple gardens closed to the public.',
     tag: 'Ancestral Craft',
     icon: GlobeIcon,
-    features: ['Nalukettu Courtyard Living', 'Organic Farm-to-Table Meals', 'Ancient Artisan Workshops'],
+    features: ['Master Artisan Workshops', 'Private Michelin Dining', 'Exclusive Heritage Access'],
   },
 ]
 

@@ -30,12 +30,12 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               <span>Nattuvazhi</span><sup className="text-sm font-normal text-[#C85A32] align-super leading-none">®</sup>
             </a>
             <p className="text-xs sm:text-sm text-[#4A4744] max-w-sm leading-relaxed">
-              Curating unlisted private eco-villas, luxury kettuvallam houseboats, and high-altitude cloud forest retreats across Kumarakom backwaters, Munnar tea mist, Wayanad rainforests, and Varkala cliffs.
+              Curating unlisted private residences, remote wilderness retreats, and bespoke expeditions across Kyoto, Amalfi Coast, the Swiss Alps, Iceland, Bali, and Patagonia. Step away from crowd noise into pure stillness.
             </p>
 
             <div className="flex items-center gap-2 pt-2 text-xs text-[#C85A32] font-medium">
               <GlobeIcon size={14} />
-              <span>Native Sanctuary Regions: Kumarakom • Munnar • Wayanad • Varkala</span>
+              <span>Global Sanctuary Hubs: Zurich • Kyoto • Tokyo • Amalfi • New York</span>
             </div>
           </div>
 

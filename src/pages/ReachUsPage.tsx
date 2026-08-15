@@ -40,9 +40,9 @@ const FAQS = [
 ]
 
 const OFFICES = [
-  { city: 'Fort Kochi', country: 'Kerala', address: 'Princess Street 14, Fort Kochi 682001', phone: '+91 484 221 5400' },
-  { city: 'Kumarakom', country: 'Vembanad Lake', address: 'Lakefront Atelier, Waterside Road', phone: '+91 481 252 8900' },
-  { city: 'Munnar', country: 'Highland Hills', address: 'Old Munnar Estate Road, Devikulam', phone: '+91 486 523 0150' },
+  { city: 'Zurich', country: 'Switzerland', address: 'Bahnhofstrasse 42, 8001 Zürich', phone: '+41 44 215 8800' },
+  { city: 'Kyoto', country: 'Japan', address: 'Arashiyama Bamboo Grove Atelier 12', phone: '+81 75 861 2400' },
+  { city: 'New York', country: 'United States', address: '5th Avenue & 57th Street, NY 10022', phone: '+1 212 555 0199' },
 ]
 
 const ReachUsPage: React.FC = () => {
@@ -165,12 +165,12 @@ const ReachUsPage: React.FC = () => {
                       onChange={(e) => setFormData({ ...formData, region: e.target.value })}
                       className="w-full px-4 py-3 bg-[#FDFBF7] border border-[#EADFCF] rounded-xl text-sm text-[#1B3B2B] focus:outline-none focus:ring-2 focus:ring-[#C85A32]"
                     >
-                      <option value="Kumarakom Backwaters">Kumarakom Cedar Kettuvallam</option>
-                      <option value="Munnar Tea Mist">Munnar Cloud Tea Lodge</option>
-                      <option value="Wayanad Rainforest">Wayanad Canopy Treehouse</option>
-                      <option value="Marari Coast">Marari Heritage Nalukettu Villa</option>
-                      <option value="Varkala Cliff">Varkala Panorama Eco Sanctuary</option>
-                      <option value="Custom Native Charter">Custom Native Expedition</option>
+                      <option value="Kyoto Sanctuary">Kyoto Arashiyama Bamboo Villa</option>
+                      <option value="Amalfi Coast">Amalfi Ravello Cliffside Residence</option>
+                      <option value="Swiss Alps">Swiss Engadin Alpine Timber Lodge</option>
+                      <option value="Iceland Domes">Iceland Reykjanes Glass Aurora Dome</option>
+                      <option value="Santorini Caldera">Santorini Oia Caldera Cave Villa</option>
+                      <option value="Custom Global Expedition">Custom Global Expedition</option>
                     </select>
                   </div>
                 </div>

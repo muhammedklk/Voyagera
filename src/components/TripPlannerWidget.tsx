@@ -2,26 +2,26 @@ import React, { useState, useRef, useEffect } from 'react'
 import { MapPinIcon, CalendarIcon, UsersIcon, SparklesIcon, SearchIcon, ChevronDownIcon, XIcon } from './Icons'
 
 const DESTINATIONS = [
-  'Kumarakom Backwaters & Vembanad Lake',
-  'Munnar Tea Estates & Anamudi Mist',
-  'Wayanad Rainforest & Cave Havens',
-  'Marari Coast & Palm Fringe',
-  'Varkala Red Cliff Panorama',
-  'Athirappilly Cascade & Teak Wilds',
+  'Kyoto & Arashiyama, Japan',
+  'Amalfi & Positano, Italy',
+  'Engadin Alps, Switzerland',
+  'Reykjavik & Glaciers, Iceland',
+  'Ubud & Sidemen Valley, Bali',
+  'Patagonia Fjords, Chile',
 ]
 
 const SEASON_OPTIONS = [
-  { value: 'Monsoon Magic 2026', label: 'Monsoon Magic (Jun - Aug)' },
-  { value: 'Post-Monsoon 2026', label: 'Post-Monsoon Refresh (Sep - Nov)' },
-  { value: 'Winter Harvest 2026', label: 'Winter Harvest (Dec - Feb)' },
-  { value: 'Spring Bloom 2027', label: 'Spring Breeze (Mar - May)' },
+  { value: 'Autumn 2026', label: 'Autumn 2026 (Oct - Nov)' },
+  { value: 'Winter 2026', label: 'Winter 2026 (Dec - Feb)' },
+  { value: 'Spring 2027', label: 'Spring 2027 (Mar - May)' },
+  { value: 'Summer 2027', label: 'Summer 2027 (Jun - Aug)' },
 ]
 
 const GUEST_OPTIONS = [
   { value: 'Solo Voyager', label: 'Solo Voyager' },
   { value: '2 Travelers', label: '2 Travelers (Couples Sanctuary)' },
-  { value: 'Family Nalukettu (4-6)', label: 'Family Sanctuary (4 - 6 Guests)' },
-  { value: 'Private Villa Charter (8+)', label: 'Private Villa Charter (8+ Guests)' },
+  { value: 'Small Group (4-6)', label: 'Small Group (4 - 6 Guests)' },
+  { value: 'Master Charter (8+)', label: 'Master Charter (8+ Guests)' },
 ]
 
 interface SelectOption {

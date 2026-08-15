@@ -65,10 +65,10 @@ const AnimatedCounter: React.FC<CounterProps> = ({
 }
 
 const STATS = [
-  { target: 12, suffix: '+', decimals: 0, label: 'Native Regions', subtext: 'Kumarakom, Munnar, Wayanad, Varkala...' },
-  { target: 48, suffix: '+', decimals: 0, label: 'Private Havens', subtext: 'Kettuvallams, Nalukettus & Treehouses' },
-  { target: 99.8, suffix: '%', decimals: 1, label: 'Satisfaction Rate', subtext: 'Verified by native heritage voyagers' },
-  { target: 100, suffix: '%', decimals: 0, label: 'Eco Offset', subtext: 'Supporting backwater & forest conservation' },
+  { target: 18, suffix: '+', decimals: 0, label: 'Global Sanctuary Havens', subtext: 'Kyoto, Amalfi, Swiss Alps, Iceland...' },
+  { target: 65, suffix: '+', decimals: 0, label: 'Unlisted Estates', subtext: 'Onsen Domes, Alpine Lodges, Cliff Villas' },
+  { target: 99.8, suffix: '%', decimals: 1, label: 'Satisfaction Rate', subtext: 'Verified by global heritage voyagers' },
+  { target: 100, suffix: '%', decimals: 0, label: 'Carbon Offset', subtext: 'Supporting forest & dark-sky conservation' },
 ]
 
 const AboutSection: React.FC = () => {
@@ -85,15 +85,15 @@ const AboutSection: React.FC = () => {
             className="text-4xl sm:text-5xl lg:text-6xl font-serif text-[#1B3B2B] leading-[1.05]"
             style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
           >
-            "We curate secret trails and native sanctuaries for those who seek authentic soul wanderlust."
+            "We curate unlisted global sanctuaries for those who seek pure silence over crowd spectacle."
           </h2>
 
           <p className="text-base text-[#4A4744] leading-relaxed font-sans">
-            In an era of performative travel and cookie-cutter resorts, true luxury is about reconnecting with original roots, pristine natural silence, and untouched local culture.
+            In an era of performative travel and noisy grand hotels, true luxury is about quiet solitude, extraordinary architecture, and pristine nature.
           </p>
 
           <p className="text-sm text-[#4A4744]/80 leading-relaxed">
-            Founded in 2022 by a collective of native architects, naturalists, and heritage stewards, Nattuvazhi operates as an exclusive sanctuary collective. We craft bespoke, zero-footprint native journeys that preserve ancient traditions while providing high-end luxury comfort.
+            Founded in 2022 by a collective of architects and naturalists, Nattuvazhi operates as an exclusive sanctuary collective across Kyoto, Amalfi Coast, Swiss Alps, Iceland, Bali, and Patagonia.
           </p>
 
           {/* Core Guarantees */}
@@ -104,7 +104,7 @@ const AboutSection: React.FC = () => {
               </div>
               <div>
                 <h4 className="text-sm font-semibold text-[#1B3B2B]">Absolute Discretion</h4>
-                <p className="text-xs text-[#4A4744]">Unlisted private estates with dedicated native host concierges.</p>
+                <p className="text-xs text-[#4A4744]">Unlisted private estates with dedicated host concierges.</p>
               </div>
             </div>
 
@@ -114,7 +114,7 @@ const AboutSection: React.FC = () => {
               </div>
               <div>
                 <h4 className="text-sm font-semibold text-[#1B3B2B]">Heritage & Eco Giving</h4>
-                <p className="text-xs text-[#4A4744]">Direct funding into mangrove restoration and traditional woodcraft.</p>
+                <p className="text-xs text-[#4A4744]">5% of all reservations directly fund land trusts & forest restoration.</p>
               </div>
             </div>
           </div>
@@ -126,18 +126,18 @@ const AboutSection: React.FC = () => {
             <div className="space-y-4">
               <div className="h-64 rounded-3xl overflow-hidden shadow-lg border border-[#EADFCF]">
                 <img
-                  src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=800&auto=format&fit=crop"
-                  alt="Kettuvallam Sunset"
+                  src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=800&auto=format&fit=crop"
+                  alt="Kyoto Sanctuary"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />
               </div>
               <div className="bg-[#1B3B2B] text-white p-6 rounded-3xl relative overflow-hidden shadow-lg border border-[#C85A32]/30">
                 <QuoteIcon size={32} className="text-[#C85A32] absolute top-4 right-4 opacity-30" />
                 <p className="text-sm font-serif italic relative z-10 leading-relaxed text-[#EADFCF]" style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}>
-                  "Nattuvazhi revealed a Kerala we never knew existed — pure quietude, secret backwater channels, and unforgettable food."
+                  "Nattuvazhi revealed a world we never knew existed — pure quietude, secret mountain valleys, and unforgettable architecture."
                 </p>
                 <span className="block mt-3 text-[11px] uppercase tracking-wider text-[#D4AF37] font-sans font-semibold">
-                  — R. Nair, Heritage Traveler
+                  — Elena R., Architectural Digest
                 </span>
               </div>
             </div>

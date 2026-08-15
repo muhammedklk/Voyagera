@@ -178,7 +178,7 @@ const Navbar: React.FC<NavbarProps> = ({ activePage = 'home', onNavigate }) => {
             </button>
 
             <div className="text-center text-xs text-[#C85A32] font-sans font-medium tracking-wide">
-              <span>Kumarakom • Munnar • Wayanad • Varkala • Marari</span>
+              <span>Zurich • Kyoto • Tokyo • Amalfi • New York</span>
             </div>
           </div>
         </div>

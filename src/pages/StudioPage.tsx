@@ -6,7 +6,7 @@ interface StudioPageProps {
   onSelectDestination?: (destination: Destination) => void
 }
 
-const CATEGORIES = ['All', 'Backwaters & Lagoons', 'Highland Mist', 'Wilderness Rainforest', 'Coastal & Beaches']
+const CATEGORIES = ['All', 'Mountain & Forest', 'Coastal & Islands', 'Aurora & Glacier']
 
 const StudioPage: React.FC<StudioPageProps> = ({ onSelectDestination }) => {
   const [activeCategory, setActiveCategory] = useState('All')
@@ -27,16 +27,16 @@ const StudioPage: React.FC<StudioPageProps> = ({ onSelectDestination }) => {
       {/* Destinations Hero Header */}
       <section className="max-w-7xl mx-auto px-6 py-16 text-center">
         <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#C85A32]/10 text-[#C85A32] text-xs font-semibold uppercase tracking-widest mb-4 border border-[#C85A32]/20">
-          <SparklesIcon size={14} className="text-[#C85A32]" /> Handpicked Native Sanctuaries
+          <SparklesIcon size={14} className="text-[#C85A32]" /> Handpicked Global Sanctuaries
         </span>
         <h1
           className="text-5xl sm:text-7xl font-serif text-[#1B3B2B] max-w-4xl mx-auto leading-[1.05]"
           style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
         >
-          Curated Destinations & Native Havens
+          Unlisted Global Sanctuaries & Retreats
         </h1>
         <p className="text-base sm:text-lg text-[#4A4744] max-w-2xl mx-auto mt-6 leading-relaxed">
-          Explore unlisted private kettuvallams, highland tea plantation lodges, rainforest canopy treehouses, and heritage Nalukettu villas.
+          Explore Kyoto bamboo villas, Swiss alpine lodges, Iceland aurora domes, Amalfi cliffside retreats, and private island havens.
         </p>
 
         {/* Category Filter Bar */}
