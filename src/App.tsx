@@ -39,7 +39,7 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className="relative min-h-screen w-full bg-white text-neutral-900 overflow-x-hidden">
+    <div className="relative min-h-screen w-full bg-[#FDFBF7] text-neutral-900 overflow-x-hidden">
       {/* Top Header Navigation */}
       <Navbar activePage={activePage} onNavigate={handleNavigate} />
 

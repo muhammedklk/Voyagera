@@ -21,99 +21,98 @@ interface Article {
 const ARTICLES: Article[] = [
   {
     id: 'art-1',
-    title: 'The Art of Japanese Onsen Solitude',
-    subtitle: 'Finding Silence in Arashiyama Cedar Groves',
+    title: 'The Ancient Craft of Kettuvallam Woodwork',
+    subtitle: 'Slow Living & Sunset Lagoons on Vembanad Lake',
     category: 'Culture',
     date: 'July 24, 2026',
     readTime: '6 min read',
-    image: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=1200&auto=format&fit=crop',
-    author: 'Kiyomi Takahashi',
-    authorRole: 'Co-Founder & Cultural Curator',
+    image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=1200&auto=format&fit=crop',
+    author: 'Kiyomi & Madhavan Nair',
+    authorRole: 'Heritage Master Craftsman & Curator',
     authorAvatar: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=400&auto=format&fit=crop',
-    location: 'Kyoto, Japan',
-    excerpt: 'Stepping into 42°C natural spring waters as autumn leaves drift silently across steam clouds.',
+    location: 'Kumarakom, Kerala',
+    excerpt: 'Hand-stitching jackwood planks with coir ropes and cashew resin to create zero-footprint floating sanctuaries.',
     highlights: [
-      'Subterranean natural geothermal mineral springs emerging at 42°C',
-      'Zero acoustic noise pollution & deep circadian sleep restoration',
-      'Private 1-on-1 tea ceremony & seasonal bamboo grove meditation',
+      'Built using 100% organic Jackwood planks tied with natural coconut coir ropes',
+      'Zero acoustic engine noise with solar-electric silent propulsion',
+      'Private 1-on-1 Toddy Palm sunset cruise & farm-to-table coastal dining',
     ],
     fullText: [
-      'In the mountains outside Kyoto, time is measured not by seconds, but by the slow dripping of geothermal water over moss-covered granite stones.',
-      'For over eight centuries, Japanese monks and poets have retreated to natural hot springs to shed the noise of court life and city hustle. At our private Arashiyama villa, the spring water emerges from 800 meters underground, rich in natural minerals that calm the nervous system.',
-      'When you submerge yourself in total quietude at dawn, surrounded only by ancient Japanese cedar and bamboo, your mind naturally aligns with the rhythm of the forest.',
-      'Every season brings a distinct olfactory landscape: spring cherry blossoms floating over natural wooden tubs, summer pine resin carried by mountain breezes, crisp maple amber in autumn, and deep silent snow blankets in winter.',
+      'In the backwater villages of Kumarakom, time is measured not by clocks, but by the gentle rhythmic lap of water against hand-carved cedar hulls.',
+      'For over three centuries, master artisans have built Kettuvallams without using a single metal nail. Planks of aged Anjili jackwood are joined using coconut fiber coir and sealed with natural cashew nut shell resin.',
+      'When you glide through mirror-like lagoons at sunset, surrounded by swaying palms and heron calls, your body drops into a calm that modern hotels cannot recreate.',
+      'Every season brings a unique atmosphere: monsoon raindrops pattering on woven bamboo roofs, winter morning lake mist, and golden summer breezes across lotus pools.',
     ],
   },
   {
     id: 'art-2',
-    title: 'Stargazing at 2,000 Meters',
-    subtitle: 'Winter Notes from the Engadin Alps',
+    title: 'High-Altitude Tea Harvesting in Anamudi Mist',
+    subtitle: 'Notes from the Cloud Estate in Munnar',
     category: 'Wilderness',
     date: 'June 18, 2026',
     readTime: '8 min read',
-    image: 'https://images.unsplash.com/photo-1502784444187-359ac186c5bb?q=80&w=1200&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1596895111956-bf1cf0599ce5?q=80&w=1200&auto=format&fit=crop',
     author: 'Julian Von Bern',
-    authorRole: 'Co-Founder & Chief Architect',
+    authorRole: 'Co-Founder & Landscape Naturalist',
     authorAvatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop',
-    location: 'St. Moritz, Switzerland',
-    excerpt: 'Zero light pollution, sub-zero air, and the Milky Way stretching over high-altitude Swiss peaks.',
+    location: 'Munnar, Kerala',
+    excerpt: 'Waking up above mountain mist with fresh estate tea leaves hand-plucked at 6,000 feet altitude.',
     highlights: [
-      'High altitude dark sky reserve with zero light pollution',
-      'Private celestial telescope deck equipped with heated cashmere blankets',
-      'Geothermal alpine thermal baths under winter star fields',
+      'High altitude organic tea estate enveloped in natural mountain cloud mist',
+      'Private mist deck equipped with stone fireplace and copper tea samovars',
+      'Guided rainforest treks to hidden Shola waterfall pools',
     ],
     fullText: [
-      'High above St. Moritz, when the last alpine skiers return to the valleys below, a profound stillness envelops the Engadin valley.',
-      'At 2,000 meters altitude, atmospheric distortion drops to near zero. Armed with heated cashmere blankets and hot spiced cider, guests step onto the private telescope deck to gaze directly into the spiral arms of Andromeda.',
-      'There is something deeply grounding about realizing how small our everyday worries are against the backdrop of eternal cosmic silence.',
-      'Our high-altitude refuge was built specifically to protect dark sky corridors. Modern architectural lighting is strictly recessed and shielded, allowing the night sky to shine with unhindered brilliance.',
+      'High above Munnar, when the morning cloud mist rolls across the rolling green ridges, a serene stillness covers the entire valley.',
+      'At 6,000 feet altitude, the cool mountain air is infused with wild cardamom and fresh tea shoots. Guests join third-generation estate pluckers at dawn to learn the art of selecting silver tips.',
+      'There is something deeply restorative about sipping handcrafted tea brewed over open firewood while watching clouds drift beneath your balcony deck.',
     ],
   },
   {
     id: 'art-3',
-    title: 'Living Below the Aurora Borealis',
-    subtitle: 'Architectural Glass Domes in Reykjanes',
+    title: 'Rainforest Treehouse Canopy Architecture',
+    subtitle: 'Living in Solitude 80 Feet Above Teak Canopy',
     category: 'Essay',
     date: 'May 30, 2026',
     readTime: '5 min read',
-    image: 'https://images.unsplash.com/photo-1517411032315-54ef2cb783bb?q=80&w=1200&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1200&auto=format&fit=crop',
     author: 'Dr. Alistair Sterling',
-    authorRole: 'Head of Expedition & Wilderness Safety',
+    authorRole: 'Head of Wilderness Conservation',
     authorAvatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=400&auto=format&fit=crop',
-    location: 'Reykjanes, Iceland',
-    excerpt: 'How triple-glazed acoustic glass turned harsh sub-arctic blizzards into cozy celestial theaters.',
+    location: 'Vythiri, Wayanad',
+    excerpt: 'How living teak trees and bamboo joints create zero-footprint eco sanctuaries high above the jungle floor.',
     highlights: [
-      '360° heated argon-filled acoustic glass dome ceiling',
-      'Private volcanic lava geothermal lagoon access',
-      'Automated Northern Lights celestial alarm system',
+      'Constructed 80ft high around living teak trees without harming forest bark',
+      'Private mountain spring jacuzzi fed by natural rainforest cascades',
+      'Nighttime bio-luminescent firefly trail walks with native naturalists',
     ],
     fullText: [
-      'Reykjanes is a realm forged by sub-arctic wind and subterranean magma. To live here is to exist between ice and fire.',
-      'When designing our glass domes, the challenge was engineering a ceiling that could withstand 100 km/h blizzard gusts while remaining heated and crystal clear for viewing solar flares.',
-      'Lying back in bed at 2:00 AM while emerald and violet auroral curtains dance directly above your head is an experience that stays with you for a lifetime.',
+      'The Western Ghats rainforest is one of the world’s oldest biodiversity hotspots. To live high in the canopy is to experience nature at its purest.',
+      'Our canopy treehouse structures were engineered to expand with the natural growth of surrounding teak trees, utilizing flexible bamboo joinery.',
+      'Sleeping to the chorus of night rain and waking up to giant malabar squirrels outside your panoramic window deck is an unforgettable connection to nature.',
     ],
   },
   {
     id: 'art-4',
-    title: 'Cliffside Mediterranean Gastronomy',
-    subtitle: 'Harvesting Bio-Dynamic Amalfi Terraces',
+    title: 'The Art of Traditional Kerala Sadya & Spice Trails',
+    subtitle: 'Farm-to-Table Gastronomy in Nalukettu Courtyards',
     category: 'Gastronomy',
     date: 'April 12, 2026',
     readTime: '7 min read',
-    image: 'https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1200&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200&auto=format&fit=crop',
     author: 'Camille Laurent',
-    authorRole: 'Gastronomy & Sommelier Director',
+    authorRole: 'Gastronomy & Spice Trail Director',
     authorAvatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=400&auto=format&fit=crop',
-    location: 'Amalfi Coast, Italy',
-    excerpt: 'From wild mountain oregano to sun-ripened Sfusato lemons overlooking the Tyrrhenian Sea.',
+    location: 'Marari Coast, Alleppey',
+    excerpt: 'Serving 24 handcrafted curries on fresh banana leaves in historic open courtyard illams.',
     highlights: [
-      'Private 3-Star Michelin chef farm-to-table culinary service',
-      'Organic Sfusato lemon & heirloom sea-salt terraced gardens',
-      'Rare bio-dynamic Campania wine cellar tasting sessions',
+      'Authentic 24-course Sadya feast prepared with organic garden harvests',
+      'Fresh coconut, black pepper, and heirloom red rice culinary masterclass',
+      'Al fresco courtyard dining paired with fresh tender coconut water',
     ],
     fullText: [
-      'The terraced lemon groves of Ravello descend 300 meters straight into turquoise waters. Here, soil is nurtured by sea salt air and volcanic minerals.',
-      'Every morning, our kitchen team hand-harvests sun-drenched lemons, wild caper leaves, and heirloom tomatoes to prepare intimate farm-to-table meals paired with rare biodynamic Campania vintages.',
+      'In a traditional Nalukettu courtyard, culinary art is rooted in Ayurvedic principles of six flavors — sweet, salty, sour, pungent, bitter, and astringent.',
+      'Every morning, our chefs gather fresh organic vegetables, farm coconuts, and black pepper from our estate gardens to prepare an intimate farm-to-table Sadya feast served on fresh banana leaves.',
     ],
   },
 ]
@@ -134,101 +133,95 @@ const JournalPage: React.FC = () => {
     const otherArticles = ARTICLES.filter((a) => a.id !== readingArticle.id).slice(0, 2)
 
     return (
-      <div className="pt-28 pb-20 bg-white text-neutral-900 animate-fade-rise">
+      <div className="pt-28 pb-20 bg-[#FDFBF7] text-[#1A1918] animate-fade-rise">
         <div className="max-w-7xl mx-auto px-6">
           {/* Top Bar Navigation & Actions */}
-          <div className="flex items-center justify-between mb-8 pb-6 border-b border-neutral-200">
+          <div className="flex items-center justify-between mb-8 pb-6 border-b border-[#EADFCF]">
             <button
               onClick={() => {
                 setReadingArticle(null)
                 window.scrollTo({ top: 0, behavior: 'smooth' })
               }}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-neutral-100 text-neutral-900 text-xs font-semibold hover:bg-neutral-200 transition-all duration-200"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#F5F0E6] text-[#1B3B2B] text-xs font-semibold hover:bg-[#EADFCF] transition-all duration-200 border border-[#EADFCF]"
             >
               ← Back to All Dispatches
             </button>
 
-            <div className="flex items-center gap-3">
-              <span className="px-3.5 py-1 rounded-full bg-amber-500/10 text-amber-700 text-xs font-semibold uppercase tracking-wider">
-                {readingArticle.category}
-              </span>
-              <span className="text-xs text-neutral-400 font-mono hidden sm:inline">
-                {readingArticle.readTime}
-              </span>
+            <div className="flex items-center gap-3 text-xs text-[#C85A32] font-mono">
+              <span>{readingArticle.category}</span>
+              <span>•</span>
+              <span>{readingArticle.readTime}</span>
             </div>
           </div>
 
-          {/* Article Header Headline */}
+          {/* Article Header & Title */}
           <div className="max-w-4xl mx-auto text-center space-y-4 mb-12">
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#C85A32]">
+              {readingArticle.location} Dispatch
+            </span>
             <h1
-              className="text-4xl sm:text-6xl md:text-7xl font-serif text-neutral-900 leading-[1.03]"
+              className="text-4xl sm:text-6xl font-serif text-[#1B3B2B] leading-[1.08]"
               style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
             >
               {readingArticle.title}
             </h1>
-            <p className="text-lg sm:text-xl text-neutral-500 font-serif italic max-w-2xl mx-auto">
+            <p className="text-lg text-[#4A4744] font-medium max-w-2xl mx-auto">
               {readingArticle.subtitle}
             </p>
 
-            {/* Author Byline Bar */}
-            <div className="pt-4 flex items-center justify-center gap-4">
-              <img
-                src={readingArticle.authorAvatar}
-                alt={readingArticle.author}
-                className="w-12 h-12 rounded-full object-cover ring-2 ring-neutral-200"
-              />
-              <div className="text-left">
-                <h4 className="text-sm font-semibold text-neutral-900">{readingArticle.author}</h4>
-                <p className="text-xs text-neutral-400">{readingArticle.authorRole} • {readingArticle.date}</p>
-              </div>
+            <div className="flex items-center justify-center gap-3 pt-4 text-xs text-[#4A4744]">
+              <span className="font-semibold text-[#1B3B2B]">{readingArticle.author}</span>
+              <span>•</span>
+              <span>{readingArticle.date}</span>
             </div>
           </div>
 
-          {/* Hero Feature Image */}
-          <div className="relative h-[400px] sm:h-[540px] w-full rounded-3xl overflow-hidden mb-16">
+          {/* Featured Hero Banner Image */}
+          <div className="max-w-5xl mx-auto h-[450px] sm:h-[550px] rounded-3xl overflow-hidden shadow-2xl mb-14 relative border border-[#EADFCF]">
             <img
               src={readingArticle.image}
               alt={readingArticle.title}
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
-            <div className="absolute bottom-6 right-6 px-4 py-2 bg-black/60 backdrop-blur-md text-white text-xs rounded-full font-medium flex items-center gap-2">
-              <MapPinIcon size={14} className="text-amber-300" /> {readingArticle.location}
+            <div className="absolute bottom-6 left-6 right-6 text-white text-xs font-medium flex items-center justify-between backdrop-blur-md bg-black/40 px-5 py-3 rounded-2xl border border-white/20">
+              <span className="flex items-center gap-1.5">
+                <MapPinIcon size={14} className="text-[#C85A32]" /> Location: {readingArticle.location}
+              </span>
+              <span>Nattuvazhi Editorial Dispatch</span>
             </div>
           </div>
 
-          {/* 2-Column Magazine Editorial Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            {/* Main Editorial Content Column (8 cols) */}
-            <div className="lg:col-span-8 space-y-8 font-sans">
-              {/* First Lead Paragraph with Classic Drop-Cap */}
-              <p className="first-letter:text-6xl first-letter:font-serif first-letter:float-left first-letter:mr-4 first-letter:text-amber-700 text-lg sm:text-xl text-neutral-800 leading-relaxed font-sans">
+          {/* Article Body Content Grid (8 cols content, 4 cols sidebar) */}
+          <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            {/* Main Editorial Text Column (8 cols) */}
+            <div className="lg:col-span-8 space-y-6 font-sans">
+              <p className="text-xl text-[#1B3B2B] font-medium leading-relaxed first-letter:text-5xl first-letter:font-serif first-letter:font-bold first-letter:float-left first-letter:mr-3 first-letter:text-[#C85A32]">
                 {readingArticle.fullText[0]}
               </p>
 
-              {/* Subsequent Body Paragraphs */}
               {readingArticle.fullText.slice(1).map((paragraph, idx) => (
-                <p key={idx} className="text-base sm:text-lg text-neutral-600 leading-relaxed">
+                <p key={idx} className="text-base sm:text-lg text-[#4A4744] leading-relaxed">
                   {paragraph}
                 </p>
               ))}
 
               {/* Editorial Pull Quote Block */}
-              <blockquote className="my-10 p-8 sm:p-10 bg-neutral-50 border-l-4 border-amber-600 rounded-r-3xl space-y-3 shadow-sm">
+              <blockquote className="my-10 p-8 sm:p-10 bg-[#F5F0E6] border-l-4 border-[#C85A32] rounded-r-3xl space-y-3 shadow-sm border-t border-b border-r border-[#EADFCF]">
                 <p
-                  className="text-2xl sm:text-3xl font-serif italic text-neutral-900 leading-snug"
+                  className="text-2xl sm:text-3xl font-serif italic text-[#1B3B2B] leading-snug"
                   style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
                 >
                   "{readingArticle.excerpt}"
                 </p>
-                <cite className="text-xs text-neutral-400 font-mono block not-italic">
-                  — {readingArticle.author}, Voyagera Editorial Dispatch
+                <cite className="text-xs text-[#C85A32] font-semibold block not-italic">
+                  — {readingArticle.author}, Nattuvazhi Editorial Dispatch
                 </cite>
               </blockquote>
 
               {/* Dispatch Key Highlights Box */}
-              <div className="p-8 bg-neutral-900 text-white rounded-3xl space-y-4 my-10 shadow-xl">
-                <span className="text-xs font-semibold uppercase tracking-widest text-amber-400">
+              <div className="p-8 bg-[#1B3B2B] text-white rounded-3xl space-y-4 my-10 shadow-xl border border-[#C85A32]/30">
+                <span className="text-xs font-semibold uppercase tracking-widest text-[#D4AF37]">
                   Dispatch Takeaways
                 </span>
                 <h3
@@ -237,10 +230,10 @@ const JournalPage: React.FC = () => {
                 >
                   Key Sanctuary Highlights
                 </h3>
-                <ul className="space-y-3 text-xs sm:text-sm text-neutral-300">
+                <ul className="space-y-3 text-xs sm:text-sm text-[#EADFCF]">
                   {readingArticle.highlights.map((hl, idx) => (
                     <li key={idx} className="flex items-start gap-2.5">
-                      <span className="w-2 h-2 rounded-full bg-amber-400 shrink-0 mt-1.5" />
+                      <span className="w-2 h-2 rounded-full bg-[#C85A32] shrink-0 mt-1.5" />
                       <span>{hl}</span>
                     </li>
                   ))}
@@ -251,28 +244,28 @@ const JournalPage: React.FC = () => {
             {/* Sticky Editorial Sidebar Column (4 cols) */}
             <div className="lg:col-span-4 space-y-8 lg:sticky lg:top-28">
               {/* Author Profile Card */}
-              <div className="bg-neutral-50 border border-neutral-200/80 rounded-3xl p-6 space-y-4 shadow-sm">
+              <div className="bg-[#F5F0E6] border border-[#EADFCF] rounded-3xl p-6 space-y-4 shadow-sm">
                 <div className="flex items-center gap-4">
                   <img
                     src={readingArticle.authorAvatar}
                     alt={readingArticle.author}
-                    className="w-16 h-16 rounded-2xl object-cover"
+                    className="w-16 h-16 rounded-2xl object-cover ring-2 ring-[#C85A32]"
                   />
                   <div>
-                    <h4 className="text-lg font-serif text-neutral-900" style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}>
+                    <h4 className="text-lg font-serif text-[#1B3B2B]" style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}>
                       {readingArticle.author}
                     </h4>
-                    <span className="text-xs text-amber-700 font-semibold block">{readingArticle.authorRole}</span>
+                    <span className="text-xs text-[#C85A32] font-semibold block">{readingArticle.authorRole}</span>
                   </div>
                 </div>
-                <p className="text-xs text-neutral-500 leading-relaxed">
-                  Curating unlisted private residences and bespoke wilderness dispatches for Voyagera global members.
+                <p className="text-xs text-[#4A4744] leading-relaxed">
+                  Curating unlisted private eco-villas and bespoke native dispatches for Nattuvazhi members.
                 </p>
               </div>
 
               {/* Related Dispatches Card */}
-              <div className="bg-neutral-900 text-white rounded-3xl p-6 space-y-6">
-                <h4 className="text-xl font-serif text-white border-b border-neutral-800 pb-3" style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}>
+              <div className="bg-[#1B3B2B] text-white rounded-3xl p-6 space-y-6 border border-[#C85A32]/30">
+                <h4 className="text-xl font-serif text-[#D4AF37] border-b border-white/10 pb-3" style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}>
                   Related Dispatches
                 </h4>
 
@@ -284,18 +277,18 @@ const JournalPage: React.FC = () => {
                         setReadingArticle(rel)
                         window.scrollTo({ top: 0, behavior: 'smooth' })
                       }}
-                      className="group cursor-pointer space-y-2 pb-4 border-b border-neutral-800 last:border-0 last:pb-0"
+                      className="group cursor-pointer space-y-2 pb-4 border-b border-white/10 last:border-0 last:pb-0"
                     >
-                      <span className="text-[10px] text-amber-400 font-semibold uppercase tracking-wider">
+                      <span className="text-[10px] text-[#C85A32] font-semibold uppercase tracking-wider">
                         {rel.category} • {rel.readTime}
                       </span>
                       <h5
-                        className="text-lg font-serif text-white group-hover:text-amber-200 transition-colors"
+                        className="text-lg font-serif text-white group-hover:text-[#D4AF37] transition-colors"
                         style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
                       >
                         {rel.title}
                       </h5>
-                      <span className="text-xs text-neutral-400 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                      <span className="text-xs text-[#EADFCF] flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                         Read Essay <ArrowRightIcon size={12} />
                       </span>
                     </div>
@@ -306,19 +299,19 @@ const JournalPage: React.FC = () => {
           </div>
 
           {/* Bottom Action Bar */}
-          <div className="mt-20 pt-8 border-t border-neutral-200 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className="mt-20 pt-8 border-t border-[#EADFCF] flex flex-col sm:flex-row items-center justify-between gap-6">
             <button
               onClick={() => {
                 setReadingArticle(null)
                 window.scrollTo({ top: 0, behavior: 'smooth' })
               }}
-              className="px-8 py-4 bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-semibold rounded-full transition-all duration-200 shadow-lg"
+              className="px-8 py-4 bg-[#1B3B2B] hover:bg-[#12291E] text-white text-xs font-semibold rounded-full transition-all duration-200 shadow-lg"
             >
               ← Return to All Journal Dispatches
             </button>
 
-            <span className="text-xs text-neutral-400 font-mono">
-              Published by Voyagera Editorial • Zurich / Kyoto / New York
+            <span className="text-xs text-[#4A4744] font-mono">
+              Published by Nattuvazhi Editorial • Fort Kochi / Kumarakom / Munnar
             </span>
           </div>
         </div>
@@ -328,32 +321,32 @@ const JournalPage: React.FC = () => {
 
   // ── Journal Grid View ──
   return (
-    <div className="pt-24 pb-20 bg-white text-neutral-900 animate-fade-rise">
+    <div className="pt-24 pb-20 bg-[#FDFBF7] text-[#1A1918] animate-fade-rise">
       {/* Header */}
       <section className="max-w-7xl mx-auto px-6 py-16 text-center">
-        <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-neutral-100 text-neutral-800 text-xs font-semibold uppercase tracking-widest mb-4">
-          <SparklesIcon size={14} className="text-amber-600" /> Voyagera Print & Digital Journal
+        <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#C85A32]/10 text-[#C85A32] text-xs font-semibold uppercase tracking-widest mb-4 border border-[#C85A32]/20">
+          <SparklesIcon size={14} className="text-[#C85A32]" /> Nattuvazhi Print & Digital Journal
         </span>
         <h1
-          className="text-5xl sm:text-7xl font-serif text-neutral-900 max-w-4xl mx-auto leading-[1.05]"
+          className="text-5xl sm:text-7xl font-serif text-[#1B3B2B] max-w-4xl mx-auto leading-[1.05]"
           style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
         >
-          Dispatches from Quiet Corners of the Earth
+          Native Dispatches & Cultural Essays
         </h1>
-        <p className="text-base sm:text-lg text-neutral-500 max-w-2xl mx-auto mt-6 leading-relaxed">
-          Essays, architectural studies, and travel dispatches published quarterly for our global community.
+        <p className="text-base sm:text-lg text-[#4A4744] max-w-2xl mx-auto mt-6 leading-relaxed">
+          Stories of kettuvallam craftsmanship, cloud forest solitude, spice gastronomy, and ancient heritage architecture.
         </p>
 
-        {/* Filter Categories */}
+        {/* Category Filters */}
         <div className="flex flex-wrap items-center justify-center gap-2 mt-10">
           {CATEGORIES.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-5 py-2.5 rounded-full text-xs font-medium transition-all duration-200 ${
+              className={`px-5 py-2.5 rounded-full text-xs font-semibold transition-all duration-200 ${
                 activeCategory === cat
-                  ? 'bg-neutral-900 text-white shadow-md'
-                  : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200'
+                  ? 'bg-[#1B3B2B] text-white shadow-md'
+                  : 'bg-[#F5F0E6] text-[#4A4744] hover:bg-[#EADFCF] border border-[#EADFCF]'
               }`}
             >
               {cat}
@@ -362,57 +355,78 @@ const JournalPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Articles Grid */}
+      {/* Main Journal Grid */}
       <section className="max-w-7xl mx-auto px-6 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {filteredArticles.map((art) => (
-            <article
+            <div
               key={art.id}
               onClick={() => {
                 setReadingArticle(art)
                 window.scrollTo({ top: 0, behavior: 'smooth' })
               }}
-              className="group cursor-pointer bg-neutral-50 rounded-3xl overflow-hidden border border-neutral-200/80 hover:shadow-xl hover:border-neutral-300 transition-all duration-300 flex flex-col justify-between"
+              className="group cursor-pointer bg-[#FDFBF7] rounded-3xl overflow-hidden border border-[#EADFCF] hover:shadow-xl hover:border-[#C85A32]/50 transition-all duration-300 flex flex-col justify-between"
             >
-              <div className="relative h-72 overflow-hidden bg-neutral-100">
+              <div className="relative h-80 overflow-hidden bg-[#F5F0E6]">
                 <img
                   src={art.image}
                   alt={art.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute top-4 left-4 px-3 py-1 bg-black/60 backdrop-blur-md text-white text-xs rounded-full font-medium">
-                  {art.category}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+
+                <div className="absolute top-4 left-4 flex items-center gap-2">
+                  <span className="px-3.5 py-1 bg-[#1B3B2B]/85 backdrop-blur-md text-white text-[11px] font-semibold rounded-full shadow-sm">
+                    {art.category}
+                  </span>
+                  <span className="px-3 py-1 bg-black/40 backdrop-blur-md text-[#EADFCF] text-[11px] font-mono rounded-full">
+                    {art.readTime}
+                  </span>
+                </div>
+
+                <div className="absolute bottom-4 left-4 right-4 text-white text-xs font-medium flex items-center justify-between">
+                  <span className="flex items-center gap-1.5 backdrop-blur-sm px-2.5 py-1 rounded-lg bg-black/30">
+                    <MapPinIcon size={12} className="text-[#C85A32]" /> {art.location}
+                  </span>
+                  <span className="flex items-center gap-1 opacity-80">
+                    <CalendarIcon size={12} /> {art.date}
+                  </span>
                 </div>
               </div>
-              <div className="p-8 flex-1 flex flex-col justify-between">
+
+              <div className="p-8 flex-1 flex flex-col justify-between space-y-6">
                 <div>
-                  <div className="flex items-center gap-3 text-xs text-neutral-400 mb-3">
-                    <span className="flex items-center gap-1"><CalendarIcon size={12} /> {art.date}</span>
-                    <span>•</span>
-                    <span>{art.readTime}</span>
-                  </div>
                   <h2
-                    className="text-3xl font-serif text-neutral-900 group-hover:text-neutral-600 transition-colors"
+                    className="text-3xl font-serif text-[#1B3B2B] group-hover:text-[#C85A32] transition-colors leading-tight"
                     style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
                   >
                     {art.title}
                   </h2>
-                  <p className="text-xs text-neutral-400 font-semibold uppercase tracking-wider mt-1 mb-3">
-                    {art.subtitle}
-                  </p>
-                  <p className="text-xs text-neutral-600 leading-relaxed line-clamp-2">
+                  <h4 className="text-xs text-[#C85A32] font-semibold uppercase tracking-wider mt-1">{art.subtitle}</h4>
+                  <p className="text-xs text-[#4A4744] mt-3 leading-relaxed line-clamp-3">
                     {art.excerpt}
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-neutral-100 flex items-center justify-between">
-                  <span className="text-xs text-neutral-500 font-medium">By {art.author}</span>
-                  <span className="text-xs font-semibold text-neutral-900 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                <div className="pt-4 border-t border-[#EADFCF] flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <img
+                      src={art.authorAvatar}
+                      alt={art.author}
+                      className="w-9 h-9 rounded-full object-cover ring-2 ring-[#C85A32]"
+                    />
+                    <div>
+                      <span className="text-xs font-semibold text-[#1B3B2B] block leading-none">{art.author}</span>
+                      <span className="text-[10px] text-[#4A4744] font-sans">{art.authorRole}</span>
+                    </div>
+                  </div>
+
+                  <span className="inline-flex items-center gap-1 text-xs font-semibold text-[#1B3B2B] group-hover:text-[#C85A32] group-hover:translate-x-1 transition-all">
                     Read Essay <ArrowRightIcon size={14} />
                   </span>
                 </div>
               </div>
-            </article>
+            </div>
           ))}
         </div>
       </section>

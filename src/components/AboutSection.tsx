@@ -65,56 +65,56 @@ const AnimatedCounter: React.FC<CounterProps> = ({
 }
 
 const STATS = [
-  { target: 45, suffix: '+', decimals: 0, label: 'Global Regions', subtext: 'Hand-scouted wilderness & urban sanctuaries' },
-  { target: 120, suffix: '+', decimals: 0, label: 'Private Havens', subtext: 'Architectural residences reserved exclusively' },
-  { target: 99.4, suffix: '%', decimals: 1, label: 'Satisfaction Rate', subtext: 'Verified by seasoned global voyagers' },
-  { target: 100, suffix: '%', decimals: 0, label: 'Carbon Offset', subtext: 'Every journey gives back to local ecosystems' },
+  { target: 12, suffix: '+', decimals: 0, label: 'Native Regions', subtext: 'Kumarakom, Munnar, Wayanad, Varkala...' },
+  { target: 48, suffix: '+', decimals: 0, label: 'Private Havens', subtext: 'Kettuvallams, Nalukettus & Treehouses' },
+  { target: 99.8, suffix: '%', decimals: 1, label: 'Satisfaction Rate', subtext: 'Verified by native heritage voyagers' },
+  { target: 100, suffix: '%', decimals: 0, label: 'Eco Offset', subtext: 'Supporting backwater & forest conservation' },
 ]
 
 const AboutSection: React.FC = () => {
   return (
-    <section className="max-w-7xl mx-auto px-6 py-24">
+    <section className="max-w-7xl mx-auto px-6 py-24 border-t border-[#EADFCF]">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         {/* Left Column — Philosophy Content */}
         <div className="lg:col-span-6 space-y-6">
-          <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-neutral-100 text-neutral-800 text-xs font-semibold uppercase tracking-widest">
-            <SparklesIcon size={14} className="text-amber-600" /> Our Philosophy
+          <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#C85A32]/10 text-[#C85A32] text-xs font-semibold uppercase tracking-widest border border-[#C85A32]/20">
+            <SparklesIcon size={14} className="text-[#C85A32]" /> Our Philosophy
           </span>
 
           <h2
-            className="text-4xl sm:text-5xl lg:text-6xl font-serif text-neutral-900 leading-[1.05]"
+            className="text-4xl sm:text-5xl lg:text-6xl font-serif text-[#1B3B2B] leading-[1.05]"
             style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
           >
-            "We build quiet spaces for those who shape the world."
+            "We curate secret trails and native sanctuaries for those who seek authentic soul wanderlust."
           </h2>
 
-          <p className="text-base text-neutral-600 leading-relaxed font-sans">
-            In an era of relentless noise and hyper-connection, true luxury is no longer about gold leaf or opulent chandeliers. It is about stillness, pristine natural beauty, and undisturbed time with what matters most.
+          <p className="text-base text-[#4A4744] leading-relaxed font-sans">
+            In an era of performative travel and cookie-cutter resorts, true luxury is about reconnecting with original roots, pristine natural silence, and untouched local culture.
           </p>
 
-          <p className="text-sm text-neutral-500 leading-relaxed">
-            Founded in 2022 by a collective of architects, naturalists, and hospitality pioneers, Voyagera operates as a private sanctuary club. We design bespoke, zero-footprint travel experiences that honor local heritage and leave the soul renewed.
+          <p className="text-sm text-[#4A4744]/80 leading-relaxed">
+            Founded in 2022 by a collective of native architects, naturalists, and heritage stewards, Nattuvazhi operates as an exclusive sanctuary collective. We craft bespoke, zero-footprint native journeys that preserve ancient traditions while providing high-end luxury comfort.
           </p>
 
           {/* Core Guarantees */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-neutral-100">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-[#EADFCF]">
             <div className="flex items-start gap-3">
-              <div className="w-8 h-8 rounded-full bg-neutral-100 flex items-center justify-center shrink-0 text-neutral-900 mt-0.5">
+              <div className="w-8 h-8 rounded-full bg-[#F5F0E6] flex items-center justify-center shrink-0 text-[#1B3B2B] mt-0.5 border border-[#EADFCF]">
                 <ShieldCheckIcon size={16} />
               </div>
               <div>
-                <h4 className="text-sm font-semibold text-neutral-900">Absolute Discretion</h4>
-                <p className="text-xs text-neutral-500">Unlisted private residences with encrypted guest concierge.</p>
+                <h4 className="text-sm font-semibold text-[#1B3B2B]">Absolute Discretion</h4>
+                <p className="text-xs text-[#4A4744]">Unlisted private estates with dedicated native host concierges.</p>
               </div>
             </div>
 
             <div className="flex items-start gap-3">
-              <div className="w-8 h-8 rounded-full bg-neutral-100 flex items-center justify-center shrink-0 text-neutral-900 mt-0.5">
+              <div className="w-8 h-8 rounded-full bg-[#F5F0E6] flex items-center justify-center shrink-0 text-[#1B3B2B] mt-0.5 border border-[#EADFCF]">
                 <GlobeIcon size={16} />
               </div>
               <div>
-                <h4 className="text-sm font-semibold text-neutral-900">Ecosystem Regeneration</h4>
-                <p className="text-xs text-neutral-500">Direct funding into local forest restoration & ocean conservation.</p>
+                <h4 className="text-sm font-semibold text-[#1B3B2B]">Heritage & Eco Giving</h4>
+                <p className="text-xs text-[#4A4744]">Direct funding into mangrove restoration and traditional woodcraft.</p>
               </div>
             </div>
           </div>
@@ -124,29 +124,29 @@ const AboutSection: React.FC = () => {
         <div className="lg:col-span-6 relative">
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-4">
-              <div className="h-64 rounded-3xl overflow-hidden shadow-lg">
+              <div className="h-64 rounded-3xl overflow-hidden shadow-lg border border-[#EADFCF]">
                 <img
-                  src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=800&auto=format&fit=crop"
-                  alt="Lakeside Sanctuary"
+                  src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=800&auto=format&fit=crop"
+                  alt="Kettuvallam Sunset"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />
               </div>
-              <div className="bg-neutral-900 text-white p-6 rounded-3xl relative overflow-hidden">
-                <QuoteIcon size={32} className="text-neutral-700 absolute top-4 right-4 opacity-40" />
-                <p className="text-sm font-serif italic relative z-10 leading-relaxed text-neutral-200" style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}>
-                  "Voyagera reframed how our family experiences the world. Pure quietude, absolute luxury."
+              <div className="bg-[#1B3B2B] text-white p-6 rounded-3xl relative overflow-hidden shadow-lg border border-[#C85A32]/30">
+                <QuoteIcon size={32} className="text-[#C85A32] absolute top-4 right-4 opacity-30" />
+                <p className="text-sm font-serif italic relative z-10 leading-relaxed text-[#EADFCF]" style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}>
+                  "Nattuvazhi revealed a Kerala we never knew existed — pure quietude, secret backwater channels, and unforgettable food."
                 </p>
-                <span className="block mt-3 text-[11px] uppercase tracking-wider text-neutral-400 font-sans">
-                  — H. V. K., Tech Founder
+                <span className="block mt-3 text-[11px] uppercase tracking-wider text-[#D4AF37] font-sans font-semibold">
+                  — R. Nair, Heritage Traveler
                 </span>
               </div>
             </div>
 
             <div className="space-y-4 pt-8">
-              <div className="h-80 rounded-3xl overflow-hidden shadow-lg">
+              <div className="h-80 rounded-3xl overflow-hidden shadow-lg border border-[#EADFCF]">
                 <img
-                  src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=800&auto=format&fit=crop"
-                  alt="Mountain Mist Haven"
+                  src="https://images.unsplash.com/photo-1596895111956-bf1cf0599ce5?q=80&w=800&auto=format&fit=crop"
+                  alt="Munnar Tea Hills"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />
               </div>
@@ -156,11 +156,11 @@ const AboutSection: React.FC = () => {
       </div>
 
       {/* Stats Counter Section with Smooth Counting Animation */}
-      <div className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-6 p-8 bg-neutral-50 border border-neutral-200/80 rounded-3xl">
+      <div className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-6 p-8 bg-[#F5F0E6] border border-[#EADFCF] rounded-3xl">
         {STATS.map((stat, idx) => (
           <div key={idx} className="text-center sm:text-left space-y-1">
             <span
-              className="text-4xl sm:text-5xl font-serif text-neutral-900 block"
+              className="text-4xl sm:text-5xl font-serif text-[#1B3B2B] block"
               style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
             >
               <AnimatedCounter
@@ -170,8 +170,8 @@ const AboutSection: React.FC = () => {
                 duration={2200}
               />
             </span>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-neutral-800">{stat.label}</h4>
-            <p className="text-xs text-neutral-500">{stat.subtext}</p>
+            <h4 className="text-xs font-bold uppercase tracking-wider text-[#C85A32]">{stat.label}</h4>
+            <p className="text-xs text-[#4A4744]">{stat.subtext}</p>
           </div>
         ))}
       </div>

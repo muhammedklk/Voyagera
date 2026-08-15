@@ -10,55 +10,58 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick }) => {
       className="relative z-10 min-h-screen flex flex-col items-center justify-center text-center px-6 pt-24 pb-32"
     >
       {/* ── Travel Sub-badge ── */}
-      <div className="animate-fade-rise mb-4 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/5 border border-black/10 backdrop-blur-md text-xs font-semibold uppercase tracking-widest text-neutral-800">
-        <span>✨ Bespoke World Expeditions & Havens</span>
+      <div className="animate-fade-rise mb-5 inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#1B3B2B]/10 border border-[#1B3B2B]/20 backdrop-blur-md text-xs font-semibold uppercase tracking-widest text-[#1B3B2B]">
+        <span className="text-[#C85A32]">🌴</span>
+        <span>Unlisted Native Sanctuaries & Heritage Trails</span>
       </div>
 
       {/* ── Travel Headline ── */}
       <h1
-        className="animate-fade-rise font-serif max-w-7xl text-5xl sm:text-7xl md:text-8xl font-normal"
+        className="animate-fade-rise font-serif max-w-6xl text-5xl sm:text-7xl md:text-8xl font-normal"
         style={{
           fontFamily: '"Instrument Serif", Georgia, serif',
-          lineHeight: 0.95,
-          letterSpacing: '-2.46px',
-          color: '#000000',
+          lineHeight: 0.96,
+          letterSpacing: '-2px',
+          color: '#1B3B2B',
         }}
       >
-        <span style={{ color: '#000000' }}>Beyond </span>
-        <em style={{ color: '#2B2B2B', fontStyle: 'italic' }}>ordinary travel,</em>
-        <span style={{ color: '#000000' }}> we discover </span>
-        <em style={{ color: '#2B2B2B', fontStyle: 'italic' }}>sacred sanctuaries.</em>
+        <span>Discover the soul of </span>
+        <em style={{ color: '#C85A32', fontStyle: 'italic' }}>nadan wanderlust,</em>
+        <br className="hidden md:inline" />
+        <span> in pure </span>
+        <em style={{ color: '#1B3B2B', fontStyle: 'italic' }}>rooted luxury.</em>
       </h1>
 
-      {/* ── Travel Sub-heading (White text with dark contrast text-shadow for crystal legibility) ── */}
+      {/* ── Travel Sub-heading ── */}
       <p
-        className="animate-fade-rise-delay text-base sm:text-lg max-w-2xl mt-8 font-medium leading-relaxed"
+        className="animate-fade-rise-delay text-base sm:text-xl max-w-3xl mt-8 font-medium leading-relaxed"
         style={{
           color: '#FFFFFF',
           fontFamily: 'Inter, system-ui, sans-serif',
           textShadow:
-            '0 0 16px rgba(0, 0, 0, 0.9), 0 2px 6px rgba(0, 0, 0, 0.8), 0 0 24px rgba(0, 0, 0, 0.6)',
+            '0 0 20px rgba(0, 0, 0, 0.95), 0 3px 8px rgba(0, 0, 0, 0.85), 0 0 30px rgba(0, 0, 0, 0.7)',
         }}
       >
-        Curating unlisted private residences, remote wilderness retreats, and bespoke expeditions across Kyoto, Amalfi, the Swiss Alps, and beyond. Step away from crowd noise into pure stillness.
+        Curating unlisted private eco-villas, luxury kettuvallam houseboats, and high-altitude cloud forest retreats across Kumarakom backwaters, Munnar tea mist, Wayanad rainforests, and Varkala cliffs.
       </p>
 
       {/* ── CTA Button ── */}
       <button
         id="hero-cta-begin-journey"
         onClick={onExploreClick}
-        className="animate-fade-rise-delay-2 rounded-full text-base mt-10 font-medium transition-all duration-200 hover:scale-[1.03] active:scale-[0.98] shadow-xl shadow-neutral-900/10"
+        className="animate-fade-rise-delay-2 rounded-full text-base sm:text-lg mt-10 font-medium transition-all duration-300 hover:scale-[1.04] active:scale-[0.98] shadow-xl hover:shadow-2xl flex items-center gap-3"
         style={{
           paddingLeft: '3.5rem',
           paddingRight: '3.5rem',
           paddingTop: '1.25rem',
           paddingBottom: '1.25rem',
-          backgroundColor: '#000000',
+          backgroundColor: '#1B3B2B',
           color: '#FFFFFF',
           fontFamily: 'Inter, system-ui, sans-serif',
         }}
       >
-        Explore Private Expeditions
+        <span>Explore Native Havens</span>
+        <span className="w-2 h-2 rounded-full bg-[#C85A32]"></span>
       </button>
     </section>
   )

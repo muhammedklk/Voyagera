@@ -4,39 +4,39 @@ import { CompassIcon, SparklesIcon, ShieldCheckIcon, GlobeIcon, ArrowRightIcon }
 const PILLARS = [
   {
     number: '01',
-    title: 'Private Expeditions',
+    title: 'Backwater Slow Cruises',
     description:
-      'Uncharted paths guided by polar explorers and local naturalists. Yacht charters across Chilean fjords and remote volcanic peaks.',
-    tag: 'Wilderness & Stars',
+      'Glide quietly through palm-fringed channels on solar-assisted kettuvallams with private naturalists and native chefs.',
+    tag: 'Lagoons & Quiet Waters',
     icon: CompassIcon,
-    features: ['Custom Flight Charters', '1-on-1 Expeditions Guide', 'Zero-Footprint Camping'],
+    features: ['Solar Kettuvallam Charters', 'Toddy Palm Sunset Expeditions', 'Private Seafood & Sadya Chefs'],
   },
   {
     number: '02',
-    title: 'Mindful Retreats',
+    title: 'Mist & Hill Estate Living',
     description:
-      'Digital quietude designed for deep focus and physical renewal. Thermal springs, sound baths, and silence in pristine nature.',
-    tag: 'Restoration',
+      'High-altitude cloud forest retreats nestled within historic tea gardens and cardamom estates in Anamudi hills.',
+    tag: 'Highland Solitude',
     icon: SparklesIcon,
-    features: ['Private Onsen & Spa', 'Personal Wellness Chef', 'Circadian Lighting Design'],
+    features: ['Private Tea Harvesting', 'Mist Deck Fireplaces', 'Shola Waterfall Treks'],
   },
   {
     number: '03',
-    title: 'Architectural Havens',
+    title: 'Ayurvedic & Forest Healing',
     description:
-      'Living in structural masterpieces. From brutalist coastal glass structures to 200-year-old restored Japanese cedar estates.',
-    tag: 'Living Art',
-    icon: ShieldCheckIcon,
-    features: ['Curated Art Collections', 'Acoustic Soundproofing', 'Private Infinity Edge Pools'],
+      'Ancient botanical wellness regimens, herbal steam therapies, and natural mountain spring plunge baths in pure quietude.',
+    tag: 'Mindful Restoration',
+    icon: SparklesIcon,
+    features: ['Custom Botanical Therapies', 'Herbal Spring Baths', 'Naturalist Guided Meditation'],
   },
   {
     number: '04',
-    title: 'Cultural Immersions',
+    title: 'Heritage Illams & Spice Trails',
     description:
-      'Private access to living legends — ancient ceramic masters, private vineyard cellars, and secret temple gardens closed to the public.',
+      'Staying in restored 4-wing Nalukettu courtyards. Experience ancient woodwork craft and organic spice culinary journeys.',
     tag: 'Ancestral Craft',
     icon: GlobeIcon,
-    features: ['Master Artisan Workshops', 'Private Michelin Dining', 'Exclusive Heritage Access'],
+    features: ['Nalukettu Courtyard Living', 'Organic Farm-to-Table Meals', 'Ancient Artisan Workshops'],
   },
 ]
 
@@ -46,26 +46,26 @@ interface ExperienceCategoriesProps {
 
 const ExperienceCategories: React.FC<ExperienceCategoriesProps> = ({ onExploreClick }) => {
   return (
-    <section className="bg-neutral-900 text-white py-24 px-6 relative overflow-hidden">
+    <section className="bg-[#1B3B2B] text-white py-24 px-6 relative overflow-hidden">
       {/* Background Decorative Blur Circle */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-neutral-800/40 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#C85A32]/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <span className="text-xs font-semibold uppercase tracking-widest text-neutral-400">
-              The Voyagera Experience
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#C85A32]">
+              The Nattuvazhi Experience
             </span>
             <h2
               className="text-4xl sm:text-6xl font-serif text-white mt-2"
               style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
             >
-              Four Pillars of Pure Flow
+              Four Pillars of Native Flow
             </h2>
           </div>
-          <p className="text-sm text-neutral-400 max-w-md leading-relaxed">
-            Every journey is crafted around total harmony — balancing solitude, high-design shelter, and unforgettable human connection.
+          <p className="text-sm text-[#EADFCF] max-w-md leading-relaxed">
+            Every journey is crafted around deep harmony — balancing untouched nature, heritage architecture, and authentic local warmth.
           </p>
         </div>
 
@@ -77,19 +77,19 @@ const ExperienceCategories: React.FC<ExperienceCategoriesProps> = ({ onExploreCl
               <div
                 key={item.number}
                 onClick={onExploreClick}
-                className="group relative bg-neutral-800/50 hover:bg-neutral-800 border border-neutral-700/60 hover:border-neutral-500 rounded-3xl p-8 transition-all duration-300 flex flex-col justify-between cursor-pointer"
+                className="group relative bg-[#12291E] hover:bg-[#12291E]/90 border border-[#C85A32]/20 hover:border-[#C85A32] rounded-3xl p-8 transition-all duration-300 flex flex-col justify-between cursor-pointer shadow-lg"
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <span className="text-xs font-serif italic text-neutral-500 text-lg">
+                    <span className="text-xs font-serif italic text-[#C85A32] text-lg">
                       {item.number}
                     </span>
-                    <div className="w-10 h-10 rounded-full bg-neutral-700/50 group-hover:bg-white group-hover:text-neutral-900 flex items-center justify-center transition-all duration-300">
+                    <div className="w-10 h-10 rounded-full bg-[#1B3B2B] group-hover:bg-[#C85A32] group-hover:text-white flex items-center justify-center transition-all duration-300 text-[#D4AF37]">
                       <IconComp size={20} />
                     </div>
                   </div>
 
-                  <span className="text-[10px] font-semibold tracking-wider text-amber-300/80 uppercase">
+                  <span className="text-[10px] font-semibold tracking-wider text-[#D4AF37] uppercase">
                     {item.tag}
                   </span>
                   <h3
@@ -98,16 +98,16 @@ const ExperienceCategories: React.FC<ExperienceCategoriesProps> = ({ onExploreCl
                   >
                     {item.title}
                   </h3>
-                  <p className="text-xs text-neutral-400 leading-relaxed mb-6">
+                  <p className="text-xs text-[#EADFCF]/80 leading-relaxed mb-6">
                     {item.description}
                   </p>
                 </div>
 
                 <div>
-                  <div className="space-y-2 pt-4 border-t border-neutral-700/50">
+                  <div className="space-y-2 pt-4 border-t border-[#C85A32]/20">
                     {item.features.map((feat, idx) => (
-                      <div key={idx} className="text-[11px] text-neutral-300 flex items-center gap-2">
-                        <span className="w-1 h-1 rounded-full bg-amber-400" />
+                      <div key={idx} className="text-[11px] text-[#EADFCF] flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#C85A32]" />
                         {feat}
                       </div>
                     ))}
@@ -115,7 +115,7 @@ const ExperienceCategories: React.FC<ExperienceCategoriesProps> = ({ onExploreCl
 
                   <button
                     onClick={onExploreClick}
-                    className="mt-6 pt-4 flex items-center gap-2 text-xs text-white font-medium group-hover:text-amber-300 transition-colors w-full text-left"
+                    className="mt-6 pt-4 flex items-center gap-2 text-xs text-white font-medium group-hover:text-[#D4AF37] transition-colors w-full text-left"
                   >
                     <span>Explore Journeys</span>
                     <ArrowRightIcon size={14} className="group-hover:translate-x-1 transition-transform" />
