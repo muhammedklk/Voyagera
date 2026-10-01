@@ -49,14 +49,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick }) => {
       <button
         id="hero-cta-begin-journey"
         onClick={onExploreClick}
-        className="group animate-fade-rise-delay-2 relative mt-10 inline-flex items-center gap-3 rounded-full px-8 py-4 text-sm font-semibold tracking-wide text-white transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] bg-black/90 hover:bg-black backdrop-blur-xl border border-white/20 hover:border-white/40 shadow-2xl shadow-black/40 hover:shadow-black/60"
+        className="group animate-fade-rise-delay-2 relative mt-10 inline-flex items-center gap-3 rounded-full px-8 py-4 text-sm font-semibold tracking-wide text-neutral-900 transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] bg-white hover:bg-neutral-100 backdrop-blur-xl border border-black/10 hover:border-black/20 shadow-xl shadow-black/10 hover:shadow-black/20"
         style={{
           fontFamily: 'Inter, system-ui, sans-serif',
         }}
       >
         <span>Explore Private Expeditions</span>
         <svg
-          className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 text-white/80 group-hover:text-white"
+          className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 text-neutral-700 group-hover:text-neutral-900"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
